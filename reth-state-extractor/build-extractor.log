@@ -1,0 +1,453 @@
+    Updating crates.io index
+    Updating git repository `https://github.com/paradigmxyz/reth`
+     Locking 410 packages to latest compatible versions
+      Adding alloy-consensus v2.0.4 (available: v2.1.0)
+      Adding alloy-consensus-any v2.0.4 (available: v2.1.0)
+      Adding alloy-eips v2.0.4 (available: v2.1.0)
+      Adding alloy-genesis v2.0.4 (available: v2.1.0)
+      Adding alloy-json-abi v1.5.7 (available: v1.6.0)
+      Adding alloy-network-primitives v2.0.4 (available: v2.1.0)
+      Adding alloy-primitives v1.5.7 (available: v1.6.0)
+      Adding alloy-rpc-types-eth v2.0.4 (available: v2.1.0)
+      Adding alloy-serde v2.0.4 (available: v2.1.0)
+      Adding alloy-sol-types v1.5.7 (available: v1.6.0)
+      Adding crypto-common v0.1.6 (available: v0.1.7)
+ Downloading crates ...
+  Downloaded alloy-consensus-any v2.0.4
+  Downloaded page_size v0.6.0
+  Downloaded macro-string v0.2.0
+  Downloaded itoa v1.0.18
+  Downloaded reth-codecs-derive v0.3.2
+  Downloaded clap_lex v1.1.0
+  Downloaded symlink v0.1.0
+  Downloaded once_cell v1.21.4
+  Downloaded nybbles v0.4.8
+  Downloaded modular-bitfield-impl v0.13.1
+  Downloaded modular-bitfield v0.13.1
+  Downloaded rapidhash v4.4.1
+  Downloaded quanta v0.12.6
+  Downloaded rand v0.8.6
+  Downloaded zeroize_derive v1.5.0
+  Downloaded time-core v0.1.9
+  Downloaded pest v2.8.6
+  Downloaded portable-atomic v1.13.1
+  Downloaded tracing-serde v0.2.0
+  Downloaded proptest v1.11.0
+  Downloaded clap_builder v4.6.0
+  Downloaded chrono v0.4.45
+  Downloaded zstd v0.13.3
+  Downloaded tracing-journald v0.3.2
+  Downloaded toml_datetime v1.1.1+spec-1.1.0
+  Downloaded tracing-logfmt v0.3.7
+  Downloaded alloy-genesis v2.0.4
+  Downloaded zmij v1.0.21
+  Downloaded alloy-eips v2.0.4
+  Downloaded alloy-eips v1.8.3
+  Downloaded time-macros v0.2.29
+  Downloaded hashbrown v0.17.1
+  Downloaded tracing-appender v0.2.5
+  Downloaded smallvec v1.15.2
+  Downloaded revm-state v11.0.1
+  Downloaded revm-primitives v23.0.0
+  Downloaded revm-database-interface v11.0.1
+  Downloaded shlex v2.0.1
+  Downloaded semver v1.0.28
+  Downloaded revm-bytecode v10.0.0
+  Downloaded libc v0.2.186
+  Downloaded zstd-safe v7.2.4
+  Downloaded toml_parser v1.1.2+spec-1.1.0
+  Downloaded serde_with_macros v3.21.0
+  Downloaded alloy-rpc-types-eth v2.0.4
+  Downloaded zeroize v1.9.0
+  Downloaded tempfile v3.27.0
+  Downloaded alloy-primitives v1.5.7
+  Downloaded raw-cpuid v11.6.0
+  Downloaded rand v0.9.4
+  Downloaded reth-primitives-traits v0.3.2
+  Downloaded memchr v2.8.2
+  Downloaded indexmap v2.14.0
+  Downloaded clap v4.6.1
+  Downloaded unicode-ident v1.0.24
+  Downloaded syn-solidity v1.6.0
+  Downloaded tinyvec v1.11.0
+  Downloaded cc v1.2.64
+  Downloaded bytes v1.11.1
+  Downloaded revm-database v13.0.1
+  Downloaded borsh v1.6.1
+  Downloaded toml_edit v0.25.12+spec-1.1.0
+  Downloaded metrics v0.24.6
+  Downloaded konst v0.2.20
+  Downloaded getrandom v0.4.2
+  Downloaded const_format v0.2.36
+  Downloaded schemars v1.2.1
+  Downloaded c-kzg v2.1.7
+  Downloaded bytemuck v1.25.0
+  Downloaded tracing-samply v0.1.5
+  Downloaded anyhow v1.0.102
+  Downloaded alloy-trie v0.9.5
+  Downloaded alloy-json-abi v1.5.7
+  Downloaded alloy-consensus v2.0.4
+  Downloaded unicode-segmentation v1.13.3
+  Downloaded num_enum_derive v0.7.6
+  Downloaded iana-time-zone v0.1.65
+  Downloaded hybrid-array v0.4.12
+  Downloaded typenum v1.20.1
+  Downloaded reth-zstd-compressors v0.3.2
+  Downloaded regex v1.12.4
+  Downloaded fixed-map v0.9.5
+  Downloaded roaring v0.11.4
+  Downloaded reth-codecs v0.3.2
+  Downloaded bitflags v2.13.0
+  Downloaded bitcoin_hashes v0.14.100
+  Downloaded ruint v1.18.0
+  Downloaded alloy-sol-macro-expander v1.6.0
+  Downloaded find-msvc-tools v0.1.9
+  Downloaded linux-raw-sys v0.12.1
+  Downloaded fastrand v2.4.1
+  Downloaded serde_json v1.0.150
+  Downloaded alloy-sol-types v1.5.7
+  Downloaded lz4_flex v0.12.2
+  Downloaded either v1.16.0
+  Downloaded digest v0.11.3
+  Downloaded deranged v0.5.8
+  Downloaded dashmap v6.2.1
+  Downloaded critical-section v1.2.0
+  Downloaded crc-catalog v2.5.0
+  Downloaded const-hex v1.19.1
+  Downloaded winnow v1.0.3
+  Downloaded clap_derive v4.6.1
+  Downloaded borsh-derive v1.6.1
+  Downloaded anstyle-parse v1.0.0
+  Downloaded anstyle v1.0.14
+  Downloaded anstream v1.0.0
+  Downloaded serde_with v3.21.0
+  Downloaded tracing-subscriber v0.3.23
+  Downloaded alloy-serde v2.0.4
+  Downloaded alloy-serde v1.8.3
+  Downloaded alloy-network-primitives v2.0.4
+  Downloaded siphasher v1.0.3
+  Downloaded rustc-hash v2.1.2
+  Downloaded rolling-file v0.2.0
+  Downloaded quote v1.0.45
+  Downloaded sysinfo v0.38.4
+  Downloaded pkg-config v0.3.33
+  Downloaded pin-project-lite v0.2.17
+  Downloaded phf_macros v0.13.1
+  Downloaded bs58 v0.5.1
+  Downloaded alloy-sol-type-parser v1.6.0
+  Downloaded alloy-sol-macro-input v1.6.0
+  Downloaded time v0.3.49
+  Downloaded syn v2.0.118
+  Downloaded zerocopy v0.8.52
+  Downloaded regex-syntax v0.8.11
+  Downloaded alloy-sol-macro v1.6.0
+  Downloaded alloy-rlp v0.3.15
+  Downloaded proc-macro-crate v3.5.0
+  Downloaded phf_shared v0.13.1
+  Downloaded phf_generator v0.13.1
+  Downloaded phf v0.13.1
+  Downloaded num_enum v0.7.6
+  Downloaded metrics-derive v0.1.2
+  Downloaded konst_macro_rules v0.2.19
+  Downloaded keccak v0.2.0
+  Downloaded keccak v0.1.6
+  Downloaded generic-array v0.14.9
+  Downloaded fixed-map-derive v0.9.5
+  Downloaded crypto-common v0.1.6
+  Downloaded colorchoice v1.0.5
+  Downloaded autocfg v1.5.1
+  Downloaded crypto-common v0.2.2
+  Downloaded alloy-tx-macros v2.1.0
+  Downloaded alloy-rlp-derive v0.3.15
+  Downloaded num-conv v0.2.2
+  Downloaded keccak-asm v0.1.8
+  Downloaded sha3-asm v0.1.8
+  Downloaded rustix v1.1.4
+  Downloaded block-buffer v0.12.1
+  Downloaded bitcoin-io v0.1.100
+  Downloaded alloy-eip7928 v0.3.7
+  Downloaded sha3 v0.11.0
+  Downloaded regex-automata v0.4.14
+  Downloaded zstd-sys v2.0.16+zstd.1.5.7
+  Downloaded sha3 v0.10.9
+   Compiling proc-macro2 v1.0.106
+   Compiling unicode-ident v1.0.24
+   Compiling quote v1.0.45
+   Compiling serde_core v1.0.228
+   Compiling libc v0.2.186
+   Compiling serde v1.0.228
+   Compiling cfg-if v1.0.4
+   Compiling zeroize v1.9.0
+   Compiling version_check v0.9.5
+   Compiling typenum v1.20.1
+   Compiling subtle v2.6.1
+   Compiling generic-array v0.14.9
+   Compiling const-oid v0.9.6
+   Compiling portable-atomic v1.13.1
+   Compiling critical-section v1.2.0
+   Compiling itoa v1.0.18
+   Compiling unicode-xid v0.2.6
+   Compiling base16ct v0.2.0
+   Compiling der v0.7.10
+   Compiling unicode-segmentation v1.13.3
+   Compiling cpufeatures v0.2.17
+   Compiling paste v1.0.15
+   Compiling convert_case v0.10.0
+   Compiling syn v2.0.118
+   Compiling once_cell v1.21.4
+   Compiling thiserror v2.0.18
+   Compiling ruint-macro v1.2.1
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.6
+   Compiling getrandom v0.2.17
+   Compiling equivalent v1.0.2
+   Compiling digest v0.10.7
+   Compiling keccak v0.1.6
+   Compiling hashbrown v0.17.1
+   Compiling rand_core v0.6.4
+   Compiling hmac v0.12.1
+   Compiling rfc6979 v0.4.0
+   Compiling ff v0.13.1
+   Compiling spki v0.7.3
+   Compiling group v0.13.0
+   Compiling pkcs8 v0.10.2
+   Compiling crypto-bigint v0.5.5
+   Compiling signature v2.2.0
+   Compiling sha2 v0.10.9
+   Compiling foldhash v0.2.0
+   Compiling sha3 v0.10.9
+   Compiling hashbrown v0.16.1
+   Compiling indexmap v2.14.0
+   Compiling const-hex v1.19.1
+   Compiling zmij v1.0.21
+   Compiling rustc-hash v2.1.2
+   Compiling rustversion v1.0.22
+   Compiling memchr v2.8.2
+   Compiling serde_json v1.0.150
+   Compiling jobserver v0.1.34
+   Compiling tracing-core v0.1.36
+   Compiling shlex v2.0.1
+   Compiling find-msvc-tools v0.1.9
+   Compiling cc v1.2.64
+   Compiling pin-project-lite v0.2.17
+   Compiling strsim v0.11.1
+   Compiling ident_case v1.0.1
+   Compiling winnow v1.0.3
+   Compiling pkg-config v0.3.33
+   Compiling toml_datetime v1.1.1+spec-1.1.0
+   Compiling crc-catalog v2.5.0
+   Compiling radium v0.7.0
+   Compiling zstd-safe v7.2.4
+   Compiling crc v3.4.0
+   Compiling bitflags v2.13.0
+   Compiling tap v1.0.1
+   Compiling wyz v0.5.1
+   Compiling zstd-sys v2.0.16+zstd.1.5.7
+   Compiling toml_parser v1.1.2+spec-1.1.0
+   Compiling konst_macro_rules v0.2.19
+   Compiling funty v2.0.0
+   Compiling konst v0.2.20
+   Compiling parity-scale-codec v3.7.5
+   Compiling serde_derive v1.0.228
+   Compiling alloy-rlp-derive v0.3.15
+   Compiling derive_more-impl v2.1.1
+   Compiling thiserror-impl v2.0.18
+   Compiling tracing-attributes v0.1.31
+   Compiling toml_edit v0.25.12+spec-1.1.0
+   Compiling auto_impl v1.3.0
+   Compiling darling_core v0.23.0
+   Compiling proc-macro-crate v3.5.0
+   Compiling const_format_proc_macros v0.2.34
+   Compiling tracing v0.1.44
+   Compiling impl-trait-for-tuples v0.2.3
+   Compiling modular-bitfield-impl v0.13.1
+   Compiling num_enum_derive v0.7.6
+   Compiling const_format v0.2.36
+   Compiling byte-slice-cast v1.2.3
+   Compiling num_enum v0.7.6
+   Compiling static_assertions v1.1.0
+   Compiling reth-codecs-derive v0.3.2
+   Compiling byteorder v1.5.0
+   Compiling modular-bitfield v0.13.1
+   Compiling crossbeam-utils v0.8.21
+   Compiling glob v0.3.3
+   Compiling heck v0.5.0
+   Compiling regex-syntax v0.8.11
+   Compiling bytes v1.11.1
+   Compiling serdect v0.2.0
+   Compiling arrayvec v0.7.6
+   Compiling sec1 v0.7.3
+   Compiling smallvec v1.15.2
+   Compiling darling_macro v0.23.0
+   Compiling alloy-rlp v0.3.15
+   Compiling elliptic-curve v0.13.8
+   Compiling darling v0.23.0
+   Compiling either v1.16.0
+   Compiling ruint v1.18.0
+   Compiling serde_with_macros v3.21.0
+   Compiling bitvec v1.0.1
+   Compiling ecdsa v0.16.9
+   Compiling alloy-tx-macros v2.1.0
+   Compiling k256 v0.13.4
+   Compiling derive_more v2.1.1
+   Compiling nybbles v0.4.8
+   Compiling serde_with v3.21.0
+   Compiling alloy-primitives v1.5.7
+   Compiling clang-sys v1.8.1
+   Compiling regex-automata v0.4.14
+   Compiling lazy_static v1.5.0
+   Compiling alloy-eip7928 v0.3.7
+   Compiling alloy-serde v2.0.4
+   Compiling alloy-eip2930 v0.2.3
+   Compiling alloy-eip2124 v0.2.0
+   Compiling alloy-eip7702 v0.6.3
+   Compiling alloy-trie v0.9.5
+   Compiling alloy-eips v2.0.4
+   Compiling revm-primitives v23.0.0
+   Compiling minimal-lexical v0.2.1
+   Compiling revm-bytecode v10.0.0
+   Compiling revm-state v11.0.1
+   Compiling nom v7.1.3
+   Compiling alloy-genesis v2.0.4
+   Compiling alloy-consensus v2.0.4
+   Compiling revm-database-interface v11.0.1
+   Compiling matchers v0.2.0
+   Compiling sharded-slab v0.1.7
+   Compiling libloading v0.8.9
+   Compiling tracing-serde v0.2.0
+   Compiling thread_local v1.1.9
+   Compiling bindgen v0.72.1
+   Compiling autocfg v1.5.1
+   Compiling nu-ansi-term v0.50.3
+   Compiling itertools v0.13.0
+   Compiling num-traits v0.2.19
+   Compiling tracing-subscriber v0.3.23
+   Compiling regex v1.12.4
+   Compiling revm-database v13.0.1
+   Compiling cexpr v0.6.0
+   Compiling itertools v0.14.0
+   Compiling strum_macros v0.27.2
+   Compiling utf8parse v0.2.2
+   Compiling parking_lot_core v0.9.12
+   Compiling shlex v1.3.0
+   Compiling anstyle-parse v1.0.0
+   Compiling strum v0.27.2
+   Compiling fixed-map-derive v0.9.5
+   Compiling anstyle-query v1.1.5
+   Compiling colorchoice v1.0.5
+   Compiling time-core v0.1.9
+   Compiling anstyle v1.0.14
+   Compiling deranged v0.5.8
+   Compiling num-conv v0.2.2
+   Compiling is_terminal_polyfill v1.70.2
+   Compiling powerfmt v0.2.0
+   Compiling scopeguard v1.2.0
+   Compiling lock_api v0.4.14
+   Compiling anstream v1.0.0
+   Compiling time v0.3.49
+   Compiling rapidhash v4.4.1
+   Compiling memmap2 v0.9.10
+   Compiling eyre v0.6.12
+   Compiling clap_lex v1.1.0
+   Compiling anyhow v1.0.102
+   Compiling fixed-map v0.9.5
+   Compiling iana-time-zone v0.1.65
+   Compiling chrono v0.4.45
+   Compiling clap_builder v4.6.0
+   Compiling metrics v0.24.6
+   Compiling crossbeam-channel v0.5.15
+   Compiling clap_derive v4.6.1
+   Compiling symlink v0.1.0
+   Compiling indenter v0.3.4
+   Compiling hashbrown v0.14.5
+   Compiling bytemuck v1.25.0
+   Compiling dashmap v6.2.1
+   Compiling roaring v0.11.4
+   Compiling tracing-appender v0.2.5
+   Compiling clap v4.6.1
+   Compiling tracing-logfmt v0.3.7
+   Compiling rolling-file v0.2.0
+   Compiling tracing-samply v0.1.5
+   Compiling reth-mdbx-sys v2.2.0 (https://github.com/paradigmxyz/reth?tag=v2.2.0#88505c7f)
+   Compiling parking_lot v0.12.5
+   Compiling tracing-journald v0.3.2
+   Compiling crossbeam-queue v0.3.12
+   Compiling bincode v1.3.3
+   Compiling reth-fs-util v2.2.0 (https://github.com/paradigmxyz/reth?tag=v2.2.0#88505c7f)
+   Compiling metrics-derive v0.1.2
+   Compiling raw-cpuid v11.6.0
+   Compiling lz4_flex v0.12.2
+   Compiling reth-metrics v2.2.0 (https://github.com/paradigmxyz/reth?tag=v2.2.0#88505c7f)
+   Compiling reth-tracing v2.2.0 (https://github.com/paradigmxyz/reth?tag=v2.2.0#88505c7f)
+   Compiling sysinfo v0.38.4
+   Compiling page_size v0.6.0
+   Compiling quanta v0.12.6
+   Compiling zstd v0.13.3
+   Compiling reth-zstd-compressors v0.3.2
+   Compiling reth-nippy-jar v2.2.0 (https://github.com/paradigmxyz/reth?tag=v2.2.0#88505c7f)
+   Compiling reth-codecs v0.3.2
+   Compiling reth-primitives-traits v0.3.2
+   Compiling reth-prune-types v2.2.0 (https://github.com/paradigmxyz/reth?tag=v2.2.0#88505c7f)
+   Compiling reth-trie-common v2.2.0 (https://github.com/paradigmxyz/reth?tag=v2.2.0#88505c7f)
+   Compiling reth-db-models v2.2.0 (https://github.com/paradigmxyz/reth?tag=v2.2.0#88505c7f)
+   Compiling reth-ethereum-primitives v2.2.0 (https://github.com/paradigmxyz/reth?tag=v2.2.0#88505c7f)
+   Compiling reth-stages-types v2.2.0 (https://github.com/paradigmxyz/reth?tag=v2.2.0#88505c7f)
+   Compiling reth-static-file-types v2.2.0 (https://github.com/paradigmxyz/reth?tag=v2.2.0#88505c7f)
+   Compiling reth-libmdbx v2.2.0 (https://github.com/paradigmxyz/reth?tag=v2.2.0#88505c7f)
+   Compiling reth-storage-errors v2.2.0 (https://github.com/paradigmxyz/reth?tag=v2.2.0#88505c7f)
+   Compiling reth-db-api v2.2.0 (https://github.com/paradigmxyz/reth?tag=v2.2.0#88505c7f)
+   Compiling reth-db v2.2.0 (https://github.com/paradigmxyz/reth?tag=v2.2.0#88505c7f)
+   Compiling reth-state-extractor v0.1.0 (/home/0xalizk/sharded-pir/binary-node/reth-state-extractor)
+warning: unused import: `Address`
+  --> src/main.rs:29:35
+   |
+29 | use alloy_primitives::{keccak256, Address, B256, U256};
+   |                                   ^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+error[E0599]: no method named `tx` found for struct `DatabaseEnv` in the current scope
+   --> src/main.rs:167:17
+    |
+167 |     let tx = db.tx().map_err(|e| eyre::eyre!("begin ro tx: {e}"))?;
+    |                 ^^ method not found in `DatabaseEnv`
+    |
+   ::: /home/0xalizk/.cargo/git/checkouts/reth-e231042ee7db3fb7/88505c7/crates/storage/db-api/src/database.rs:19:8
+    |
+ 19 |     fn tx(&self) -> Result<Self::TX, DatabaseError>;
+    |        -- the method is available for `DatabaseEnv` here
+    |
+    = help: items from traits can only be used if the trait is in scope
+help: trait `Database` which provides `tx` is implemented but not in scope; perhaps you want to import it
+    |
+ 25 + use reth_db::Database;
+    |
+
+error[E0716]: temporary value dropped while borrowed
+  --> src/main.rs:84:33
+   |
+84 |         let len_be = trim_left(&(len as u64).to_be_bytes());
+   |                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^ - temporary value is freed at the end of this statement
+   |                                 |
+   |                                 creates a temporary value which is freed while still in use
+85 |         w.write_all(&[0xb7 + len_be.len() as u8])?;
+   |                              ------ borrow later used here
+   |
+   = note: consider using a `let` binding to create a longer lived value
+
+error[E0716]: temporary value dropped while borrowed
+   --> src/main.rs:117:33
+    |
+117 |         let len_be = trim_left(&(len as u64).to_be_bytes());
+    |                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^ - temporary value is freed at the end of this statement
+    |                                 |
+    |                                 creates a temporary value which is freed while still in use
+118 |         out.push(0xf7 + len_be.len() as u8);
+    |                         ------ borrow later used here
+    |
+    = note: consider using a `let` binding to create a longer lived value
+
+Some errors have detailed explanations: E0599, E0716.
+For more information about an error, try `rustc --explain E0599`.
+warning: `reth-state-extractor` (bin "reth-state-extractor") generated 1 warning
+error: could not compile `reth-state-extractor` (bin "reth-state-extractor") due to 3 previous errors; 1 warning emitted

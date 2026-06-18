@@ -1,0 +1,24 @@
+# Large regenerable data artifacts (NEVER push)
+# downloaded + extracted reth/geth snapshots (~321 GB)
+/snapshots/
+# migrated binary-trie RocksDB datadir (~33 GB)
+/hoodi-binary-dd/
+# geth datadir symlink used for exports
+/hoodi-dd/
+# geth db exports: preimages/snapshot/code (~39 GB) -- *.log under gethdump IS kept
+/gethdump/**/*.rlp
+*.tar.zst
+
+# Cloned upstream repos (reference by URL + commit in README; do not vendor).
+# No trailing slash: these are embedded git repos (gitlinks).
+/ethrex
+/go-ethereum
+
+# Rust build output
+**/target/
+
+# Editor / OS junk
+*.swp
+*.swo
+*~
+.DS_Store

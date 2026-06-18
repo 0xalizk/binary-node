@@ -1,0 +1,22 @@
+### preimage export 12:13:59
+INFO [06-17|12:46:49.097] Exporting chain data                     file=gethdump/hoodi/preimages.rlp kind=preimage count=140,378,000 elapsed=32m42.267s
+INFO [06-17|12:46:57.106] Exporting chain data                     file=gethdump/hoodi/preimages.rlp kind=preimage count=141,099,000 elapsed=32m50.276s
+INFO [06-17|12:47:05.113] Exporting chain data                     file=gethdump/hoodi/preimages.rlp kind=preimage count=141,793,000 elapsed=32m58.283s
+INFO [06-17|12:47:13.124] Exporting chain data                     file=gethdump/hoodi/preimages.rlp kind=preimage count=142,492,000 elapsed=33m6.294s
+INFO [06-17|12:47:20.191] Exported chain data                      file=gethdump/hoodi/preimages.rlp kind=preimage count=143,110,410 elapsed=33m13.361s
+preimage exit=0  size=11G
+### snapshot export 12:47:23
+INFO [06-17|13:48:42.637] Exporting chain data                     file=gethdump/hoodi/snapshot.rlp kind=snapshot count=315,565,000 elapsed=1h1m14.871s
+INFO [06-17|13:48:50.640] Exporting chain data                     file=gethdump/hoodi/snapshot.rlp kind=snapshot count=316,091,000 elapsed=1h1m22.874s
+INFO [06-17|13:48:58.647] Exporting chain data                     file=gethdump/hoodi/snapshot.rlp kind=snapshot count=316,646,000 elapsed=1h1m30.882s
+INFO [06-17|13:49:06.653] Exporting chain data                     file=gethdump/hoodi/snapshot.rlp kind=snapshot count=317,179,000 elapsed=1h1m38.888s
+INFO [06-17|13:49:13.266] Exported chain data                      file=gethdump/hoodi/snapshot.rlp kind=snapshot count=317,608,139 elapsed=1h1m45.500s
+snapshot exit=0  size=24G
+### code export 13:49:16
+INFO [06-17|13:50:43.205] Exporting chain data                     file=gethdump/hoodi/code.rlp kind=code count=3,479,000 elapsed=1m20.131s
+INFO [06-17|13:50:51.211] Exporting chain data                     file=gethdump/hoodi/code.rlp kind=code count=3,865,000 elapsed=1m28.137s
+INFO [06-17|13:50:59.232] Exporting chain data                     file=gethdump/hoodi/code.rlp kind=code count=4,227,000 elapsed=1m36.158s
+INFO [06-17|13:51:07.252] Exporting chain data                     file=gethdump/hoodi/code.rlp kind=code count=4,573,000 elapsed=1m44.177s
+INFO [06-17|13:51:13.834] Exported chain data                      file=gethdump/hoodi/code.rlp kind=code count=4,815,849 elapsed=1m50.759s
+code exit=0  size=4.2G
+### ALL EXPORTS DONE 13:51:17

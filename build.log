@@ -1,0 +1,1362 @@
+info: syncing channel updates for 1.90.0-x86_64-unknown-linux-gnu
+info: latest update on 2025-09-18 for version 1.90.0 (1159e78c4 2025-09-14)
+info: downloading 6 components
+    Updating crates.io index
+    Updating git repository `https://github.com/lambdaclass/bls12_381`
+    Updating git repository `https://github.com/axiom-crypto/openvm-kzg.git`
+    Updating git repository `https://github.com/yetanotherco/aligned_layer`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/OpenZeppelin/openzeppelin-contracts`
+    Updating git submodule `https://github.com/a16z/erc4626-tests.git`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/dapphub/ds-test`
+    Updating git submodule `https://github.com/a16z/halmos-cheatcodes`
+    Updating git submodule `https://github.com/OpenZeppelin/openzeppelin-contracts-upgradeable`
+    Updating git submodule `https://github.com/a16z/erc4626-tests.git`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/dapphub/ds-test`
+    Updating git submodule `https://github.com/a16z/halmos-cheatcodes`
+    Updating git submodule `https://github.com/OpenZeppelin/openzeppelin-contracts.git`
+    Updating git submodule `https://github.com/a16z/erc4626-tests.git`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/dapphub/ds-test`
+    Updating git submodule `https://github.com/a16z/halmos-cheatcodes`
+    Updating git submodule `https://github.com/Layr-Labs/eigenlayer-contracts.git`
+    Updating git submodule `https://github.com/dapphub/ds-test`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/OpenZeppelin/openzeppelin-contracts-upgradeable`
+    Updating git submodule `https://github.com/a16z/erc4626-tests.git`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/dapphub/ds-test`
+    Updating git submodule `https://github.com/OpenZeppelin/openzeppelin-contracts`
+    Updating git submodule `https://github.com/a16z/erc4626-tests.git`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/dapphub/ds-test`
+    Updating git submodule `https://github.com/Layr-Labs/zeus-templates`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/yetanotherco/eigenlayer-middleware`
+    Updating git submodule `https://github.com/Layr-labs/eigenlayer-contracts`
+    Updating git submodule `https://github.com/dapphub/ds-test`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/dapphub/ds-test`
+    Updating git submodule `https://github.com/OpenZeppelin/openzeppelin-contracts`
+    Updating git submodule `https://github.com/OpenZeppelin/openzeppelin-contracts-upgradeable`
+    Updating git submodule `https://github.com/OpenZeppelin/openzeppelin-contracts-upgradeable`
+    Updating git submodule `https://github.com/a16z/erc4626-tests.git`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/dapphub/ds-test`
+    Updating git submodule `https://github.com/OpenZeppelin/openzeppelin-contracts`
+    Updating git submodule `https://github.com/a16z/erc4626-tests.git`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/dapphub/ds-test`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/Openzeppelin/openzeppelin-contracts`
+    Updating git submodule `https://github.com/Openzeppelin/openzeppelin-contracts-upgradeable`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/OpenZeppelin/openzeppelin-contracts`
+    Updating git submodule `https://github.com/a16z/erc4626-tests.git`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/dapphub/ds-test`
+    Updating git submodule `https://github.com/OpenZeppelin/openzeppelin-contracts-upgradeable`
+    Updating git submodule `https://github.com/a16z/erc4626-tests.git`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/dapphub/ds-test`
+    Updating git submodule `https://github.com/OpenZeppelin/openzeppelin-contracts.git`
+    Updating git submodule `https://github.com/a16z/erc4626-tests.git`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/dapphub/ds-test`
+    Updating git submodule `https://github.com/risc0/risc0-ethereum`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/OpenZeppelin/openzeppelin-contracts`
+    Updating git submodule `https://github.com/a16z/erc4626-tests.git`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/a16z/halmos-cheatcodes`
+    Updating git submodule `https://github.com/succinctlabs/sp1-contracts`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/openzeppelin/openzeppelin-contracts`
+    Updating git submodule `https://github.com/a16z/erc4626-tests.git`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/dapphub/ds-test`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/OpenZeppelin/openzeppelin-contracts`
+    Updating git submodule `https://github.com/a16z/erc4626-tests.git`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/dapphub/ds-test`
+    Updating git repository `https://github.com/0xPolygonHermez/zisk.git`
+    Updating git repository `https://github.com/openvm-org/openvm.git`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/riscv-software-src/riscv-tests.git`
+    Updating git submodule `https://github.com/riscv/riscv-test-env.git`
+    Updating git repository `https://github.com/openvm-org/stark-backend.git`
+    Updating git submodule `https://github.com/foundry-rs/forge-std`
+    Updating git submodule `https://github.com/riscv-software-src/riscv-tests.git`
+    Updating git submodule `https://github.com/riscv/riscv-test-env.git`
+    Updating git repository `https://github.com/lambdaclass/lambdaworks.git`
+    Updating git repository `https://github.com/openvm-org/stark-backend.git`
+    Updating git repository `https://github.com/Plonky3/Plonky3.git`
+    Updating git repository `https://github.com/HorizenLabs/poseidon2.git`
+    Updating git repository `https://github.com/axiom-crypto/halo2curves.git`
+ Downloading crates ...
+  Downloaded aead v0.5.2
+  Downloaded byte-slice-cast v1.2.3
+  Downloaded blake2b_simd v1.0.4
+  Downloaded bytecheck v0.8.2
+  Downloaded block-buffer v0.10.4
+  Downloaded castaway v0.2.4
+  Downloaded cfg-if v1.0.4
+  Downloaded cargo-platform v0.1.9
+  Downloaded bytecheck_derive v0.8.2
+  Downloaded alloy-sol-macro-input v1.5.2
+  Downloaded arrayref v0.3.9
+  Downloaded borsh-derive v1.6.0
+  Downloaded adler2 v2.0.1
+  Downloaded crossbeam-queue v0.3.12
+  Downloaded cfg_aliases v0.2.1
+  Downloaded ark-serialize-derive v0.5.0
+  Downloaded addchain v0.2.0
+  Downloaded cpufeatures v0.2.17
+  Downloaded crossbeam v0.8.4
+  Downloaded crc v3.4.0
+  Downloaded async-stream v0.3.6
+  Downloaded darling_macro v0.20.11
+  Downloaded ctrlc v3.5.1
+  Downloaded dashu-macros v0.4.1
+  Downloaded dashu v0.4.2
+  Downloaded document-features v0.2.12
+  Downloaded crunchy v0.2.4
+  Downloaded crc-catalog v2.4.0
+  Downloaded dunce v1.0.5
+  Downloaded darling_macro v0.21.3
+  Downloaded dirs-sys v0.4.1
+  Downloaded concat-kdf v0.1.0
+  Downloaded downcast-rs v1.2.1
+  Downloaded atomic-waker v1.1.2
+  Downloaded ark-serialize v0.3.0
+  Downloaded ark-ff-macros v0.5.0
+  Downloaded ark-ff-asm v0.5.0
+  Downloaded ark-ff-asm v0.4.2
+  Downloaded ark-bn254 v0.5.0
+  Downloaded derive_builder_macro v0.20.2
+  Downloaded async-stream-impl v0.3.6
+  Downloaded ark-ff-asm v0.3.0
+  Downloaded directories v5.0.1
+  Downloaded ark-serialize v0.4.2
+  Downloaded base16ct v0.2.0
+  Downloaded darling_macro v0.23.0
+  Downloaded ark-ff-macros v0.3.0
+  Downloaded digest v0.9.0
+  Downloaded alloy-eip2930 v0.2.3
+  Downloaded alloy-rlp v0.3.12
+  Downloaded dyn-clone v1.0.20
+  Downloaded anstyle-query v1.1.5
+  Downloaded alloy-rlp-derive v0.3.12
+  Downloaded clap_lex v0.7.7
+  Downloaded alloy-tx-macros v1.5.2
+  Downloaded colorchoice v1.0.4
+  Downloaded crypto-common v0.1.7
+  Downloaded dirs v5.0.1
+  Downloaded cexpr v0.6.0
+  Downloaded cargo_metadata v0.18.1
+  Downloaded cassowary v0.3.0
+  Downloaded const-hex v1.17.0
+  Downloaded endian-type v0.1.2
+  Downloaded envy v0.4.2
+  Downloaded enum-ordinalize v4.3.2
+  Downloaded env_filter v0.1.4
+  Downloaded equivalent v1.0.2
+  Downloaded bitcoin-io v0.1.4
+  Downloaded errno v0.3.14
+  Downloaded fastrlp v0.4.0
+  Downloaded eth-keystore v0.5.0
+  Downloaded eventsource-stream v0.2.3
+  Downloaded ethereum-types v0.15.1
+  Downloaded ark-serialize v0.5.0
+  Downloaded alloy-sol-macro v1.5.2
+  Downloaded ff v0.12.1
+  Downloaded fastrand v2.3.0
+  Downloaded alloy-signer v1.5.2
+  Downloaded alloy-eip7928 v0.3.2
+  Downloaded bit-set v0.8.0
+  Downloaded alloy-consensus-any v1.5.2
+  Downloaded anstyle-parse v0.2.7
+  Downloaded anstyle v1.0.13
+  Downloaded fd-lock v4.0.4
+  Downloaded alloy-sol-type-parser v1.5.2
+  Downloaded fixed-hash v0.8.0
+  Downloaded alloy-core v1.5.2
+  Downloaded ff_derive v0.13.1
+  Downloaded ahash v0.8.12
+  Downloaded fnv v1.0.7
+  Downloaded autocfg v1.5.0
+  Downloaded futures-task v0.3.31
+  Downloaded backoff v0.4.0
+  Downloaded auto_impl v1.3.0
+  Downloaded gcd v2.3.0
+  Downloaded gen_ops v0.4.0
+  Downloaded enum-ordinalize-derive v4.3.2
+  Downloaded ghash v0.5.1
+  Downloaded ethbloom v0.14.1
+  Downloaded enum-map-derive v0.17.0
+  Downloaded crossbeam-deque v0.8.6
+  Downloaded convert_case v0.10.0
+  Downloaded alloy-rpc-types-any v1.5.2
+  Downloaded convert_case v0.6.0
+  Downloaded constant_time_eq v0.4.2
+  Downloaded foreign-types-shared v0.1.1
+  Downloaded futures-sink v0.3.31
+  Downloaded futures-io v0.3.31
+  Downloaded funty v2.0.0
+  Downloaded form_urlencoded v1.2.2
+  Downloaded derive_builder_core v0.20.2
+  Downloaded futures-macro v0.3.31
+  Downloaded futures-utils-wasm v0.1.0
+  Downloaded generic-array v0.14.7
+  Downloaded data-encoding v2.10.0
+  Downloaded digest v0.10.7
+  Downloaded getset v0.1.6
+  Downloaded dashu-base v0.4.1
+  Downloaded ark-ff-macros v0.4.2
+  Downloaded deranged v0.5.5
+  Downloaded async-trait v0.1.89
+  Downloaded ark-std v0.5.0
+  Downloaded bincode v1.3.3
+  Downloaded ark-std v0.4.0
+  Downloaded ark-std v0.3.0
+  Downloaded alloy-eip2124 v0.2.0
+  Downloaded axum-core v0.4.5
+  Downloaded alloy-network-primitives v1.5.2
+  Downloaded const_format_proc_macros v0.2.34
+  Downloaded cipher v0.4.4
+  Downloaded alloy-eip7702 v0.6.3
+  Downloaded anstream v0.6.21
+  Downloaded base64ct v1.8.3
+  Downloaded arrayvec v0.7.6
+  Downloaded dashmap v6.1.0
+  Downloaded axum-core v0.5.6
+  Downloaded ctr v0.9.2
+  Downloaded downloader v0.2.8
+  Downloaded either v1.15.0
+  Downloaded camino v1.2.2
+  Downloaded byteorder v1.5.0
+  Downloaded alloy-sol-macro-expander v1.5.2
+  Downloaded alloy-signer-local v1.5.2
+  Downloaded headers-core v0.3.0
+  Downloaded heck v0.5.0
+  Downloaded addr2line v0.25.1
+  Downloaded home v0.5.12
+  Downloaded httpdate v1.0.3
+  Downloaded halo2 v0.1.0-beta.2
+  Downloaded heck v0.4.1
+  Downloaded enum-map v2.7.3
+  Downloaded ff v0.13.1
+  Downloaded fastrlp v0.3.1
+  Downloaded fastbloom v0.14.1
+  Downloaded find-msvc-tools v0.1.8
+  Downloaded futures-executor v0.3.31
+  Downloaded foreign-types v0.3.2
+  Downloaded foldhash v0.2.0
+  Downloaded foldhash v0.1.5
+  Downloaded hex-simd v0.8.0
+  Downloaded hex-literal v0.4.1
+  Downloaded http-body v1.0.1
+  Downloaded impl-codec v0.7.1
+  Downloaded idna_adapter v1.2.1
+  Downloaded impl-rlp v0.4.0
+  Downloaded impl-codec v0.6.0
+  Downloaded ident_case v1.0.1
+  Downloaded indenter v0.3.4
+  Downloaded instant v0.1.13
+  Downloaded alloy-rpc-types v1.5.2
+  Downloaded futures-channel v0.3.31
+  Downloaded futures-core v0.3.31
+  Downloaded generic-array v1.1.0
+  Downloaded inout v0.1.4
+  Downloaded instability v0.3.11
+  Downloaded colored v2.2.0
+  Downloaded is_terminal_polyfill v1.70.2
+  Downloaded displaydoc v0.2.5
+  Downloaded darling v0.23.0
+  Downloaded console v0.15.11
+  Downloaded darling v0.20.11
+  Downloaded clap_derive v4.5.49
+  Downloaded keccak v0.1.5
+  Downloaded ecdsa v0.16.9
+  Downloaded keccak-asm v0.1.4
+  Downloaded lazy_static v1.5.0
+  Downloaded ansi_term v0.12.1
+  Downloaded blake2 v0.10.6
+  Downloaded bitflags v2.10.0
+  Downloaded const-oid v0.9.6
+  Downloaded alloy-network v1.5.2
+  Downloaded alloy-serde v1.5.2
+  Downloaded alloy-json-rpc v1.5.2
+  Downloaded bit-vec v0.8.0
+  Downloaded educe v0.6.0
+  Downloaded alloy-json-abi v1.5.2
+  Downloaded lru v0.12.5
+  Downloaded lru-slab v0.1.2
+  Downloaded allocator-api2 v0.2.21
+  Downloaded http-body-util v0.1.3
+  Downloaded hyper-tls v0.6.0
+  Downloaded hyper-timeout v0.5.2
+  Downloaded impl-trait-for-tuples v0.2.3
+  Downloaded group v0.12.1
+  Downloaded glob v0.3.3
+  Downloaded malachite v0.6.1
+  Downloaded munge_macro v0.4.7
+  Downloaded macro-string v0.1.4
+  Downloaded nohash-hasher v0.2.0
+  Downloaded eyre v0.6.12
+  Downloaded bytemuck v1.24.0
+  Downloaded alloy-transport-http v1.5.2
+  Downloaded getrandom v0.2.17
+  Downloaded indoc v2.0.7
+  Downloaded ipnet v2.11.0
+  Downloaded itoa v1.0.17
+  Downloaded num v0.4.3
+  Downloaded num_cpus v1.17.0
+  Downloaded num_threads v0.1.7
+  Downloaded bitcoin_hashes v0.14.1
+  Downloaded group v0.13.0
+  Downloaded ark-ff v0.3.0
+  Downloaded ark-ec v0.5.0
+  Downloaded anyhow v1.0.100
+  Downloaded libloading v0.8.9
+  Downloaded opaque-debug v0.3.1
+  Downloaded alloy-trie v0.9.3
+  Downloaded lru v0.16.3
+  Downloaded openssl-probe v0.1.6
+  Downloaded openssl-probe v0.2.1
+  Downloaded hex v0.4.3
+  Downloaded httparse v1.10.1
+  Downloaded hmac v0.12.1
+  Downloaded hex-conservative v0.2.2
+  Downloaded openssl-macros v0.1.1
+  Downloaded munge v0.4.7
+  Downloaded outref v0.5.2
+  Downloaded p3-dft v0.2.3-succinct
+  Downloaded p3-keccak-air v0.2.3-succinct
+  Downloaded p3-mds v0.2.3-succinct
+  Downloaded alloy-chains v0.2.30
+  Downloaded alloy-rpc-types-engine v1.5.2
+  Downloaded futures v0.3.31
+  Downloaded alloy-transport v1.5.2
+  Downloaded matchers v0.2.0
+  Downloaded jubjub v0.9.0
+  Downloaded alloy v1.5.2
+  Downloaded p3-merkle-tree v0.2.3-succinct
+  Downloaded p3-symmetric v0.2.3-succinct
+  Downloaded ark-ff v0.5.0
+  Downloaded memuse v0.2.2
+  Downloaded axum-extra v0.10.3
+  Downloaded base64 v0.22.1
+  Downloaded ark-poly v0.5.0
+  Downloaded neli-proc-macros v0.2.2
+  Downloaded p3-poseidon2 v0.2.3-succinct
+  Downloaded nibble_vec v0.1.0
+  Downloaded pairing v0.23.0
+  Downloaded pairing v0.22.0
+  Downloaded mime v0.3.17
+  Downloaded parity-scale-codec-derive v3.7.5
+  Downloaded num-iter v0.1.45
+  Downloaded num-conv v0.2.0
+  Downloaded litrs v1.0.0
+  Downloaded alloy-dyn-abi v1.5.2
+  Downloaded jobserver v0.1.34
+  Downloaded crc32fast v1.5.0
+  Downloaded clang-sys v1.8.1
+  Downloaded pathdiff v0.2.3
+  Downloaded crossbeam-utils v0.8.21
+  Downloaded dashu-ratio v0.4.1
+  Downloaded num_enum_derive v0.7.5
+  Downloaded derive_more v1.0.0
+  Downloaded num_enum_derive v0.5.11
+  Downloaded num_enum v0.7.5
+  Downloaded num_enum v0.5.11
+  Downloaded icu_properties v2.1.2
+  Downloaded num-rational v0.4.2
+  Downloaded num-complex v0.4.6
+  Downloaded p3-maybe-rayon v0.2.3-succinct
+  Downloaded p3-matrix v0.2.3-succinct
+  Downloaded p3-interpolation v0.2.3-succinct
+  Downloaded p3-commit v0.2.3-succinct
+  Downloaded p3-challenger v0.2.3-succinct
+  Downloaded p3-bn254-fr v0.2.3-succinct
+  Downloaded option-ext v0.2.0
+  Downloaded p3-field v0.2.3-succinct
+  Downloaded pin-utils v0.1.0
+  Downloaded potential_utf v0.1.4
+  Downloaded primitive-types v0.12.2
+  Downloaded proc-macro-crate v1.3.1
+  Downloaded alloy-rpc-client v1.5.2
+  Downloaded alloy-contract v1.5.2
+  Downloaded jsonwebtoken v9.3.1
+  Downloaded derivative v2.2.0
+  Downloaded primitive-types v0.13.1
+  Downloaded proc-macro-crate v3.4.0
+  Downloaded p3-uni-stark v0.2.3-succinct
+  Downloaded once_cell v1.21.3
+  Downloaded nu-ansi-term v0.50.3
+  Downloaded derive_builder v0.20.2
+  Downloaded clap v4.5.54
+  Downloaded ark-ff v0.4.2
+  Downloaded alloy-sol-types v1.5.2
+  Downloaded crossbeam-epoch v0.9.18
+  Downloaded backtrace v0.3.76
+  Downloaded elf v0.7.4
+  Downloaded ptr_meta v0.3.1
+  Downloaded darling v0.21.3
+  Downloaded alloy-primitives v1.5.2
+  Downloaded log v0.4.29
+  Downloaded nybbles v0.4.7
+  Downloaded pem v3.0.6
+  Downloaded paste v1.0.15
+  Downloaded radium v0.7.0
+  Downloaded pem-rfc7468 v0.7.0
+  Downloaded rancor v0.1.1
+  Downloaded elliptic-curve v0.13.8
+  Downloaded rayon-scan v0.1.1
+  Downloaded aes v0.8.4
+  Downloaded icu_normalizer v2.1.1
+  Downloaded pin-project-lite v0.2.16
+  Downloaded polyval v0.6.2
+  Downloaded pkg-config v0.3.32
+  Downloaded ppv-lite86 v0.2.21
+  Downloaded powerfmt v0.2.0
+  Downloaded ref-cast-impl v1.0.25
+  Downloaded ref-cast v1.0.25
+  Downloaded primeorder v0.13.6
+  Downloaded rend v0.5.3
+  Downloaded pkcs8 v0.10.2
+  Downloaded indicatif v0.17.11
+  Downloaded proc-macro-error2 v2.0.1
+  Downloaded prost v0.13.5
+  Downloaded prost-derive v0.13.5
+  Downloaded rfc6979 v0.4.0
+  Downloaded rlp v0.6.1
+  Downloaded rlp v0.5.2
+  Downloaded number_prefix v0.4.0
+  Downloaded bytes v1.11.0
+  Downloaded ptr_meta_derive v0.3.1
+  Downloaded ruint-macro v1.2.1
+  Downloaded rustc_version v0.4.1
+  Downloaded rustc_version v0.3.3
+  Downloaded rustc-hash v1.1.0
+  Downloaded parking_lot v0.12.5
+  Downloaded pasta_curves v0.4.1
+  Downloaded parking_lot_core v0.9.12
+  Downloaded pasta_curves v0.5.1
+  Downloaded lock_api v0.4.14
+  Downloaded p3-air v0.2.3-succinct
+  Downloaded icu_collections v2.1.1
+  Downloaded pin-project-internal v1.1.10
+  Downloaded rustyline-derive v0.11.1
+  Downloaded salsa20 v0.10.2
+  Downloaded scale-info-derive v2.11.6
+  Downloaded scopeguard v1.2.0
+  Downloaded scrypt v0.10.0
+  Downloaded k256 v0.13.4
+  Downloaded p3-util v0.2.3-succinct
+  Downloaded percent-encoding v2.3.2
+  Downloaded pbkdf2 v0.11.0
+  Downloaded ripemd v0.1.3
+  Downloaded rkyv_derive v0.8.14
+  Downloaded protobuf-support v3.7.2
+  Downloaded proc-macro-error-attr2 v2.0.0
+  Downloaded getrandom v0.3.4
+  Downloaded matchit v0.7.3
+  Downloaded alloy-rpc-types-eth v1.5.2
+  Downloaded rustc-demangle v0.1.27
+  Downloaded iana-time-zone v0.1.64
+  Downloaded rustc-hex v2.1.0
+  Downloaded serde_arrays v0.2.0
+  Downloaded rustls-native-certs v0.8.3
+  Downloaded rustls-pemfile v2.2.0
+  Downloaded rustversion v1.0.22
+  Downloaded serde_urlencoded v0.7.1
+  Downloaded serde_spanned v0.6.9
+  Downloaded rusty-fork v0.3.1
+  Downloaded serial_test v3.3.1
+  Downloaded p256 v0.13.2
+  Downloaded pin-project v1.1.10
+  Downloaded mime_guess v2.0.5
+  Downloaded serial_test_derive v3.3.1
+  Downloaded sha1 v0.10.6
+  Downloaded num-modular v0.6.1
+  Downloaded num-order v1.2.0
+  Downloaded quick-error v1.2.3
+  Downloaded proc-macro2 v1.0.106
+  Downloaded rand_chacha v0.3.1
+  Downloaded sec1 v0.7.3
+  Downloaded semver v1.0.27
+  Downloaded sdd v3.0.10
+  Downloaded signature v2.2.0
+  Downloaded alloy-consensus v1.5.2
+  Downloaded reqwest-middleware v0.3.3
+  Downloaded parity-scale-codec v3.7.5
+  Downloaded dashu-float v0.4.3
+  Downloaded derive_more-impl v1.0.0
+  Downloaded serde_path_to_error v0.1.20
+  Downloaded openssl-sys v0.9.111
+  Downloaded darling_core v0.23.0
+  Downloaded sp1-derive v5.2.4
+  Downloaded aes-gcm v0.10.3
+  Downloaded cc v1.2.54
+  Downloaded litemap v0.8.1
+  Downloaded local-ip-address v0.6.9
+  Downloaded prettyplease v0.2.37
+  Downloaded rustc-hash v2.1.1
+  Downloaded scale-info v2.11.6
+  Downloaded sp1-recursion-derive v5.2.4
+  Downloaded num-bigint v0.3.3
+  Downloaded shlex v1.3.0
+  Downloaded procfs v0.17.0
+  Downloaded spawned-macros v0.5.0
+  Downloaded spawned-rt v0.5.0
+  Downloaded stable_deref_trait v1.2.1
+  Downloaded p3-fri v0.2.3-succinct
+  Downloaded sp1-primitives v5.2.4
+  Downloaded sp1-curves v5.2.4
+  Downloaded subtle v2.6.1
+  Downloaded ryu v1.0.22
+  Downloaded sha2 v0.10.9
+  Downloaded tap v1.0.1
+  Downloaded borsh v1.6.0
+  Downloaded indexmap v2.13.0
+  Downloaded serdect v0.2.0
+  Downloaded procfs-core v0.17.0
+  Downloaded signal-hook-mio v0.2.5
+  Downloaded siphasher v1.0.1
+  Downloaded smallvec v1.15.1
+  Downloaded spki v0.7.3
+  Downloaded hyper-rustls v0.27.7
+  Downloaded simdutf8 v0.1.5
+  Downloaded threadpool v1.8.1
+  Downloaded icu_provider v2.1.1
+  Downloaded indexmap v1.9.3
+  Downloaded impl-serde v0.5.0
+  Downloaded axum v0.7.9
+  Downloaded quinn v0.11.9
+  Downloaded matchit v0.8.4
+  Downloaded serde_derive v1.0.228
+  Downloaded memmap2 v0.9.10
+  Downloaded serde_core v1.0.228
+  Downloaded snap v1.1.1
+  Downloaded static_assertions v1.1.0
+  Downloaded strum_macros v0.27.2
+  Downloaded strum_macros v0.26.4
+  Downloaded rand v0.8.5
+  Downloaded native-tls v0.2.14
+  Downloaded rayon-core v1.13.0
+  Downloaded num-integer v0.1.46
+  Downloaded rand_core v0.6.4
+  Downloaded rand_chacha v0.9.0
+  Downloaded quote v1.0.44
+  Downloaded rand_xorshift v0.4.0
+  Downloaded rand_core v0.9.5
+  Downloaded sp1-build v5.0.8
+  Downloaded sp1-cuda v5.0.8
+  Downloaded time-core v0.1.8
+  Downloaded tikv-jemallocator v0.6.1
+  Downloaded aho-corasick v1.1.4
+  Downloaded nom v7.1.3
+  Downloaded strsim v0.11.1
+  Downloaded idna v1.1.0
+  Downloaded darling_core v0.20.11
+  Downloaded safe_arch v0.7.4
+  Downloaded schemars v0.9.0
+  Downloaded derive_more v2.1.1
+  Downloaded crossbeam-channel v0.5.15
+  Downloaded synstructure v0.13.2
+  Downloaded darling_core v0.21.3
+  Downloaded thiserror v2.0.18
+  Downloaded thiserror v1.0.69
+  Downloaded tinyvec_macros v0.1.1
+  Downloaded compact_str v0.8.1
+  Downloaded crypto-bigint v0.5.5
+  Downloaded rrs-succinct v0.1.0
+  Downloaded itertools v0.13.0
+  Downloaded strum v0.27.2
+  Downloaded strum v0.26.3
+  Downloaded const_format v0.2.35
+  Downloaded futures-util v0.3.31
+  Downloaded semver-parser v0.10.3
+  Downloaded semver v0.11.0
+  Downloaded prometheus v0.14.0
+  Downloaded thread_local v1.1.9
+  Downloaded thiserror-impl v2.0.18
+  Downloaded thiserror-impl v1.0.69
+  Downloaded toml_datetime v0.6.11
+  Downloaded axum v0.8.8
+  Downloaded headers v0.4.1
+  Downloaded slab v0.4.11
+  Downloaded size v0.4.1
+  Downloaded sync_wrapper v1.0.2
+  Downloaded simple_asn1 v0.6.3
+  Downloaded socket2 v0.5.10
+  Downloaded socket2 v0.6.2
+  Downloaded toml_write v0.1.2
+  Downloaded tower-service v0.3.3
+  Downloaded tower-layer v0.3.3
+  Downloaded signal-hook-registry v1.4.8
+  Downloaded rand v0.9.2
+  Downloaded icu_normalizer_data v2.1.1
+  Downloaded icu_locale_core v2.1.1
+  Downloaded rustls-webpki v0.103.9
+  Downloaded twirp-rs v0.13.0-succinct
+  Downloaded unarray v0.1.4
+  Downloaded quinn-udp v0.5.14
+  Downloaded num-traits v0.2.19
+  Downloaded hyper v1.8.1
+  Downloaded schemars v1.2.0
+  Downloaded spawned-concurrency v0.5.0
+  Downloaded sharded-slab v0.1.7
+  Downloaded try-lock v0.2.5
+  Downloaded time-macros v0.2.26
+  Downloaded tinystr v0.8.2
+  Downloaded unicode-truncate v1.1.0
+  Downloaded utf8_iter v1.0.4
+  Downloaded tempfile v3.24.0
+  Downloaded untrusted v0.9.0
+  Downloaded utf8parse v0.2.2
+  Downloaded der v0.7.10
+  Downloaded derive_more-impl v2.1.1
+  Downloaded alloy-provider v1.5.2
+  Downloaded universal-hash v0.5.1
+  Downloaded secp256k1 v0.30.0
+  Downloaded tokio-macros v2.6.0
+  Downloaded spin v0.9.8
+  Downloaded tokio-tungstenite v0.28.0
+  Downloaded unicode-xid v0.2.6
+  Downloaded want v0.3.1
+  Downloaded subenum v1.1.3
+  Downloaded p3-baby-bear v0.2.3-succinct
+  Downloaded rustls-pki-types v1.14.0
+  Downloaded utf-8 v0.7.6
+  Downloaded serde v1.0.228
+  Downloaded vec_map v0.8.2
+  Downloaded version_check v0.9.5
+  Downloaded tracing-appender v0.2.4
+  Downloaded yoke-derive v0.8.1
+  Downloaded zerofrom-derive v0.1.6
+  Downloaded zeroize_derive v1.4.3
+  Downloaded range-set-blaze v0.1.16
+  Downloaded tokio-native-tls v0.3.1
+  Downloaded toml_datetime v0.7.5+spec-1.1.0
+  Downloaded sp1-recursion-circuit v5.0.8
+  Downloaded uint v0.9.5
+  Downloaded zerofrom v0.1.6
+  Downloaded hkdf v0.12.4
+  Downloaded tiny-keccak v2.0.2
+  Downloaded neli v0.7.3
+  Downloaded valuable v0.1.1
+  Downloaded iri-string v0.7.10
+  Downloaded vergen-git2 v1.0.7
+  Downloaded web-time v1.1.0
+  Downloaded wait-timeout v0.2.1
+  Downloaded vergen-lib v0.1.6
+  Downloaded libm v0.2.16
+  Downloaded rapidhash v4.2.1
+  Downloaded toml_parser v1.0.6+spec-1.1.0
+  Downloaded zeroize v1.8.2
+  Downloaded tracing-forest v0.1.6
+  Downloaded tracing-log v0.2.0
+  Downloaded ucd-trie v0.1.7
+  Downloaded uint v0.10.0
+  Downloaded zmij v1.0.17
+  Downloaded icu_properties_data v2.1.2
+  Downloaded unicase v2.9.0
+  Downloaded pest v2.8.5
+  Downloaded sp1-recursion-core v5.2.4
+  Downloaded tokio-stream v0.1.18
+  Downloaded vsimd v0.8.0
+  Downloaded sp1-core-executor v5.2.4
+  Downloaded signal-hook v0.3.18
+  Downloaded tracing-core v0.1.36
+  Downloaded serde_with_macros v3.16.1
+  Downloaded unicode-ident v1.0.22
+  Downloaded tokio-rustls v0.26.4
+  Downloaded toml v0.8.23
+  Downloaded wyz v0.5.1
+  Downloaded rustyline v15.0.0
+  Downloaded writeable v0.6.2
+  Downloaded yoke v0.8.1
+  Downloaded zerovec-derive v0.11.2
+  Downloaded uuid v1.20.0
+  Downloaded memchr v2.7.6
+  Downloaded minimal-lexical v0.2.1
+  Downloaded bitvec v1.0.1
+  Downloaded toml_edit v0.23.10+spec-1.0.0
+  Downloaded sp1-recursion-gnark-ffi v5.0.8
+  Downloaded tracing-attributes v0.1.31
+  Downloaded typenum v1.19.0
+  Downloaded regex v1.12.2
+  Downloaded crossterm v0.28.1
+  Downloaded reqwest v0.12.28
+  Downloaded lambdaworks-crypto v0.13.0
+  Downloaded uuid v0.8.2
+  Downloaded vergen v9.0.6
+  Downloaded syn-solidity v1.5.2
+  Downloaded bindgen v0.72.1
+  Downloaded bindgen v0.70.1
+  Downloaded tinyvec v1.10.0
+  Downloaded hashbrown v0.12.3
+  Downloaded miniz_oxide v0.8.9
+  Downloaded http v1.4.0
+  Downloaded hyper-util v0.1.19
+  Downloaded itertools v0.10.5
+  Downloaded sp1-recursion-compiler v5.2.4
+  Downloaded sp1-stark v5.2.4
+  Downloaded portable-atomic v1.13.0
+  Downloaded scc v2.4.0
+  Downloaded crossterm v0.29.0
+  Downloaded dashu-int v0.4.1
+  Downloaded tonic v0.12.3
+  Downloaded rkyv v0.8.14
+  Downloaded wide v0.7.33
+  Downloaded serde_json v1.0.149
+  Downloaded tower v0.4.13
+  Downloaded mio v1.1.1
+  Downloaded num-bigint v0.4.6
+  Downloaded lambdaworks-math v0.13.0
+  Downloaded tungstenite v0.28.0
+  Downloaded protobuf v3.7.2
+  Downloaded hashbrown v0.15.5
+  Downloaded hashbrown v0.14.5
+  Downloaded toml_edit v0.22.27
+  Downloaded toml_edit v0.19.15
+  Downloaded gimli v0.32.3
+  Downloaded itertools v0.12.1
+  Downloaded serde_with v3.16.1
+  Downloaded tower-http v0.6.8
+  Downloaded clap_builder v4.5.54
+  Downloaded url v2.5.8
+  Downloaded blake3 v1.8.3
+  Downloaded proptest v1.9.0
+  Downloaded halo2_proofs v0.1.0
+  Downloaded zerotrie v0.2.3
+  Downloaded tokio-util v0.7.18
+  Downloaded itertools v0.14.0
+  Downloaded cbindgen v0.27.0
+  Downloaded hashbrown v0.16.1
+  Downloaded quinn-proto v0.11.13
+  Downloaded radix_trie v0.2.1
+  Downloaded tower v0.5.3
+  Downloaded ruint v1.17.2
+  Downloaded unicode-segmentation v1.12.0
+  Downloaded alloy-genesis v1.5.2
+  Downloaded openssl v0.10.75
+  Downloaded h2 v0.4.13
+  Downloaded alloy-eips v1.5.2
+  Downloaded sp1-core-machine v5.2.4
+  Downloaded sp1-sdk v5.0.8
+  Downloaded time v0.3.46
+  Downloaded nix v0.30.1
+  Downloaded zerovec v0.11.5
+  Downloaded syn v1.0.109
+  Downloaded zkhash v0.2.0
+  Downloaded git2 v0.20.3
+  Downloaded object v0.37.3
+  Downloaded rayon v1.11.0
+  Downloaded chrono v0.4.43
+  Downloaded webpki-roots v1.0.5
+  Downloaded rocksdb v0.24.0
+  Downloaded snowbridge-amcl v1.0.2
+  Downloaded regex-syntax v0.8.8
+  Downloaded unicode-width v0.1.14
+  Downloaded lz4-sys v1.11.1+lz4-1.10.0
+  Downloaded zerocopy v0.8.34
+  Downloaded winnow v0.5.40
+  Downloaded rustls v0.23.36
+  Downloaded sysinfo v0.30.13
+  Downloaded rustix v0.38.44
+  Downloaded malachite-q v0.6.1
+  Downloaded sha3-asm v0.1.4
+  Downloaded rustix v1.1.3
+  Downloaded winnow v0.7.14
+  Downloaded sp1-prover v5.0.8
+  Downloaded tracing-subscriber v0.3.22
+  Downloaded tracing v0.1.44
+  Downloaded vcpkg v0.2.15
+  Downloaded blst v0.3.16
+  Downloaded sp1_bls12_381 v0.8.0-sp1-5.0.0
+  Downloaded regex-automata v0.4.13
+  Downloaded nix v0.29.0
+  Downloaded unicode-width v0.2.0
+  Downloaded syn v2.0.114
+  Downloaded sha3 v0.10.8
+  Downloaded bls12_381 v0.7.1
+  Downloaded ratatui v0.29.0
+  Downloaded ring v0.17.14
+  Downloaded bzip2-sys v0.1.13+1.0.8
+  Downloaded linux-raw-sys v0.4.15
+  Downloaded secp256k1-sys v0.10.1
+  Downloaded libc v0.2.180
+  Downloaded libz-sys v1.1.23
+  Downloaded malachite-base v0.6.1
+  Downloaded tokio v1.49.0
+  Downloaded tikv-jemalloc-sys v0.6.1+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7
+  Downloaded encoding_rs v0.8.35
+  Downloaded librocksdb-sys v0.17.3+10.4.2
+  Downloaded kzg-rs v0.2.7
+  Downloaded c-kzg v2.1.5
+  Downloaded libgit2-sys v0.18.3+1.9.2
+  Downloaded linux-raw-sys v0.11.0
+  Downloaded malachite-nz v0.6.1
+  Downloaded tui-logger v0.17.4
+   Compiling proc-macro2 v1.0.106
+   Compiling unicode-ident v1.0.22
+   Compiling quote v1.0.44
+   Compiling libc v0.2.180
+   Compiling cfg-if v1.0.4
+   Compiling version_check v0.9.5
+   Compiling typenum v1.19.0
+   Compiling generic-array v0.14.7
+   Compiling shlex v1.3.0
+   Compiling serde v1.0.228
+   Compiling find-msvc-tools v0.1.8
+   Compiling autocfg v1.5.0
+   Compiling zerocopy v0.8.34
+   Compiling serde_core v1.0.228
+   Compiling num-traits v0.2.19
+   Compiling syn v2.0.114
+   Compiling jobserver v0.1.34
+   Compiling subtle v2.6.1
+   Compiling getrandom v0.2.17
+   Compiling cc v1.2.54
+   Compiling rand_core v0.6.4
+   Compiling num-integer v0.1.46
+   Compiling radium v0.7.0
+   Compiling num-bigint v0.3.3
+   Compiling syn v1.0.109
+   Compiling const-oid v0.9.6
+   Compiling once_cell v1.21.3
+   Compiling byteorder v1.5.0
+   Compiling smallvec v1.15.1
+   Compiling pin-project-lite v0.2.16
+   Compiling crossbeam-utils v0.8.21
+   Compiling log v0.4.29
+   Compiling tap v1.0.1
+   Compiling itoa v1.0.17
+   Compiling wyz v0.5.1
+   Compiling addchain v0.2.0
+   Compiling thiserror v2.0.18
+   Compiling funty v2.0.0
+   Compiling crunchy v0.2.4
+   Compiling memchr v2.7.6
+   Compiling allocator-api2 v0.2.21
+   Compiling bitvec v1.0.1
+   Compiling either v1.15.0
+   Compiling synstructure v0.13.2
+   Compiling parking_lot_core v0.9.12
+   Compiling scopeguard v1.2.0
+   Compiling lock_api v0.4.14
+   Compiling ppv-lite86 v0.2.21
+   Compiling tracing-core v0.1.36
+   Compiling num-bigint v0.4.6
+   Compiling ahash v0.8.12
+   Compiling cpufeatures v0.2.17
+   Compiling futures-core v0.3.31
+   Compiling hex v0.4.3
+   Compiling ff_derive v0.13.1
+   Compiling tiny-keccak v2.0.2
+   Compiling zeroize_derive v1.4.3
+   Compiling serde_derive v1.0.228
+   Compiling zerofrom-derive v0.1.6
+   Compiling yoke-derive v0.8.1
+   Compiling zeroize v1.8.2
+   Compiling ff v0.13.1
+   Compiling thiserror-impl v2.0.18
+   Compiling group v0.13.0
+   Compiling tracing-attributes v0.1.31
+   Compiling crypto-common v0.1.7
+   Compiling block-buffer v0.10.4
+   Compiling zerovec-derive v0.11.2
+   Compiling ark-serialize-derive v0.5.0
+   Compiling digest v0.10.7
+   Compiling enum-ordinalize-derive v4.3.2
+   Compiling displaydoc v0.2.5
+   Compiling paste v1.0.15
+   Compiling enum-ordinalize v4.3.2
+   Compiling parking_lot v0.12.5
+   Compiling bitflags v2.10.0
+   Compiling tracing v0.1.44
+   Compiling educe v0.6.0
+   Compiling ark-ff-macros v0.5.0
+   Compiling ark-ff-asm v0.5.0
+   Compiling ptr_meta_derive v0.3.1
+   Compiling rand_chacha v0.3.1
+   Compiling blst v0.3.16
+   Compiling malachite-nz v0.6.1
+   Compiling rand v0.8.5
+   Compiling pairing v0.23.0
+   Compiling errno v0.3.14
+   Compiling futures-sink v0.3.31
+   Compiling zmij v1.0.17
+   Compiling futures-channel v0.3.31
+   Compiling bytes v1.11.0
+   Compiling signal-hook-registry v1.4.8
+   Compiling tokio-macros v2.6.0
+   Compiling futures-macro v0.3.31
+   Compiling secp256k1-sys v0.10.1
+   Compiling mio v1.1.1
+   Compiling socket2 v0.6.2
+   Compiling slab v0.4.11
+   Compiling futures-task v0.3.31
+   Compiling futures-io v0.3.31
+   Compiling equivalent v1.0.2
+   Compiling pin-utils v0.1.0
+   Compiling foldhash v0.2.0
+   Compiling futures-util v0.3.31
+   Compiling tokio v1.49.0
+   Compiling hashbrown v0.16.1
+   Compiling anyhow v1.0.100
+   Compiling pkg-config v0.3.32
+   Compiling http v1.4.0
+   Compiling bytecheck_derive v0.8.2
+   Compiling c-kzg v2.1.5
+   Compiling ryu v1.0.22
+   Compiling rayon-core v1.13.0
+   Compiling vcpkg v0.2.15
+   Compiling sp1_bls12_381 v0.8.0-sp1-5.0.0
+   Compiling foldhash v0.1.5
+   Compiling hashbrown v0.15.5
+   Compiling kzg-rs v0.2.7
+   Compiling munge_macro v0.4.7
+   Compiling itertools v0.13.0
+   Compiling rustc-hex v2.1.0
+   Compiling libm v0.2.16
+   Compiling icu_properties_data v2.1.2
+   Compiling lazy_static v1.5.0
+   Compiling icu_normalizer_data v2.1.1
+   Compiling indexmap v2.13.0
+   Compiling der v0.7.10
+   Compiling static_assertions v1.1.0
+   Compiling base16ct v0.2.0
+   Compiling getrandom v0.3.4
+   Compiling arrayvec v0.7.6
+   Compiling sec1 v0.7.3
+   Compiling rlp v0.6.1
+   Compiling ark-std v0.5.0
+   Compiling hmac v0.12.1
+   Compiling crypto-bigint v0.5.5
+   Compiling rkyv_derive v0.8.14
+   Compiling serde_json v1.0.149
+   Compiling bytemuck v1.24.0
+   Compiling crc32fast v1.5.0
+   Compiling safe_arch v0.7.4
+   Compiling ark-serialize v0.5.0
+   Compiling impl-rlp v0.4.0
+   Compiling tokio-util v0.7.18
+   Compiling fixed-hash v0.8.0
+   Compiling itertools v0.14.0
+   Compiling elliptic-curve v0.13.8
+   Compiling impl-serde v0.5.0
+   Compiling zerofrom v0.1.6
+   Compiling httparse v1.10.1
+   Compiling stable_deref_trait v1.2.1
+   Compiling ark-ff v0.5.0
+   Compiling yoke v0.8.1
+   Compiling malachite-base v0.6.1
+   Compiling wide v0.7.33
+   Compiling rfc6979 v0.4.0
+   Compiling uint v0.10.0
+   Compiling crossbeam-epoch v0.9.18
+   Compiling http-body v1.0.1
+   Compiling ptr_meta v0.3.1
+   Compiling sha2 v0.10.9
+   Compiling signature v2.2.0
+   Compiling num_cpus v1.17.0
+   Compiling rustversion v1.0.22
+   Compiling threadpool v1.8.1
+   Compiling ecdsa v0.16.9
+   Compiling rancor v0.1.1
+   Compiling crossbeam-deque v0.8.6
+   Compiling primitive-types v0.13.1
+   Compiling ethbloom v0.14.1
+   Compiling rand_core v0.9.5
+   Compiling percent-encoding v2.3.2
+   Compiling fnv v1.0.7
+   Compiling simdutf8 v0.1.5
+   Compiling tower-service v0.3.3
+   Compiling cfg_aliases v0.2.1
+   Compiling base64 v0.22.1
+   Compiling glob v0.3.3
+   Compiling rustc-hash v2.1.1
+   Compiling clang-sys v1.8.1
+   Compiling ethereum-types v0.15.1
+   Compiling bytecheck v0.8.2
+   Compiling rand_chacha v0.9.0
+   Compiling ark-poly v0.5.0
+   Compiling zerovec v0.11.5
+   Compiling ark-ec v0.5.0
+   Compiling primeorder v0.13.6
+   Compiling crossbeam-channel v0.5.15
+   Compiling serde_arrays v0.2.0
+   Compiling try-lock v0.2.5
+   Compiling strsim v0.11.1
+   Compiling ident_case v1.0.1
+   Compiling atomic-waker v1.1.2
+   Compiling spin v0.9.8
+   Compiling httpdate v1.0.3
+   Compiling darling_core v0.20.11
+   Compiling h2 v0.4.13
+   Compiling want v0.3.1
+   Compiling secp256k1 v0.30.0
+   Compiling ark-bn254 v0.5.0
+   Compiling p256 v0.13.2
+   Compiling rand v0.9.2
+   Compiling rend v0.5.3
+   Compiling k256 v0.13.4
+   Compiling bls12_381 v0.8.0 (https://github.com/lambdaclass/bls12_381?branch=expose-affine-constructors#78cad037)
+   Compiling munge v0.4.7
+   Compiling crossbeam-queue v0.3.12
+   Compiling ripemd v0.1.3
+   Compiling sync_wrapper v1.0.2
+   Compiling tower-layer v0.3.3
+   Compiling malachite-q v0.6.1
+   Compiling regex-syntax v0.8.8
+   Compiling hex-literal v0.4.1
+   Compiling malachite v0.6.1
+   Compiling minimal-lexical v0.2.1
+   Compiling nom v7.1.3
+   Compiling rkyv v0.8.14
+   Compiling regex-automata v0.4.13
+   Compiling hyper v1.8.1
+   Compiling ethrex-crypto v9.0.0 (/home/0xalizk/sharded-pir/binary-node/ethrex/crates/common/crypto)
+   Compiling crossbeam v0.8.4
+   Compiling darling_macro v0.20.11
+   Compiling rayon v1.11.0
+   Compiling ethrex-rlp v9.0.0 (/home/0xalizk/sharded-pir/binary-node/ethrex/crates/common/rlp)
+   Compiling form_urlencoded v1.2.2
+   Compiling http-body-util v0.1.3
+   Compiling openssl-sys v0.9.111
+   Compiling libloading v0.8.9
+   Compiling mime v0.3.17
+   Compiling ipnet v2.11.0
+   Compiling bindgen v0.72.1
+   Compiling heck v0.5.0
+   Compiling vsimd v0.8.0
+   Compiling outref v0.5.2
+   Compiling hyper-util v0.1.19
+   Compiling hex-simd v0.8.0
+   Compiling ethrex-trie v9.0.0 (/home/0xalizk/sharded-pir/binary-node/ethrex/crates/common/trie)
+   Compiling darling v0.20.11
+   Compiling regex v1.12.2
+   Compiling cexpr v0.6.0
+   Compiling tower v0.5.3
+   Compiling tinystr v0.8.2
+   Compiling sha1 v0.10.6
+   Compiling lz4-sys v1.11.1+lz4-1.10.0
+   Compiling writeable v0.6.2
+   Compiling litemap v0.8.1
+   Compiling time-core v0.1.8
+   Compiling thiserror v1.0.69
+   Compiling num-conv v0.2.0
+   Compiling icu_locale_core v2.1.1
+   Compiling matchers v0.2.0
+   Compiling derive_builder_core v0.20.2
+   Compiling ethrex-common v9.0.0 (/home/0xalizk/sharded-pir/binary-node/ethrex/crates/common)
+   Compiling serde_urlencoded v0.7.1
+   Compiling potential_utf v0.1.4
+   Compiling zerotrie v0.2.3
+   Compiling sharded-slab v0.1.7
+   Compiling thiserror-impl v1.0.69
+   Compiling tracing-log v0.2.0
+   Compiling thread_local v1.1.9
+   Compiling utf-8 v0.7.6
+   Compiling nu-ansi-term v0.50.3
+   Compiling unicode-segmentation v1.12.0
+   Compiling rustix v0.38.44
+   Compiling data-encoding v2.10.0
+   Compiling convert_case v0.6.0
+   Compiling tracing-subscriber v0.3.22
+   Compiling tungstenite v0.28.0
+   Compiling librocksdb-sys v0.17.3+10.4.2
+   Compiling icu_provider v2.1.1
+   Compiling icu_collections v2.1.1
+   Compiling derive_builder_macro v0.20.2
+   Compiling nix v0.30.1
+   Compiling blake3 v1.8.3
+   Compiling protobuf v3.7.2
+   Compiling procfs v0.17.0
+   Compiling foreign-types-shared v0.1.1
+   Compiling linux-raw-sys v0.4.15
+   Compiling unicode-xid v0.2.6
+   Compiling openssl v0.10.75
+   Compiling derive_more-impl v1.0.0
+   Compiling foreign-types v0.3.2
+   Compiling protobuf-support v3.7.2
+   Compiling tokio-tungstenite v0.28.0
+   Compiling strum_macros v0.27.2
+   Compiling axum-core v0.5.6
+   Compiling libz-sys v1.1.23
+   Compiling procfs-core v0.17.0
+   Compiling inout v0.1.4
+   Compiling openssl-macros v0.1.1
+   Compiling serde_path_to_error v0.1.20
+   Compiling constant_time_eq v0.4.2
+   Compiling siphasher v1.0.1
+   Compiling matchit v0.8.4
+   Compiling native-tls v0.2.14
+   Compiling arrayref v0.3.9
+   Compiling prometheus v0.14.0
+   Compiling axum v0.8.8
+   Compiling icu_normalizer v2.1.1
+   Compiling fastbloom v0.14.1
+   Compiling cipher v0.4.4
+   Compiling strum v0.27.2
+   Compiling derive_more v1.0.0
+   Compiling icu_properties v2.1.2
+   Compiling lru v0.16.3
+   Compiling universal-hash v0.5.1
+   Compiling powerfmt v0.2.0
+   Compiling openssl-probe v0.1.6
+   Compiling opaque-debug v0.3.1
+   Compiling polyval v0.6.2
+   Compiling deranged v0.5.5
+   Compiling ethrex-binary-trie v9.0.0 (/home/0xalizk/sharded-pir/binary-node/ethrex/crates/common/binary_trie)
+   Compiling idna_adapter v1.2.1
+   Compiling ctrlc v3.5.1
+   Compiling ethrex-levm v9.0.0 (/home/0xalizk/sharded-pir/binary-node/ethrex/crates/vm/levm)
+   Compiling time-macros v0.2.26
+   Compiling vergen-lib v0.1.6
+   Compiling tokio-stream v0.1.18
+   Compiling futures-executor v0.3.31
+   Compiling libgit2-sys v0.18.3+1.9.2
+   Compiling utf8_iter v1.0.4
+   Compiling utf8parse v0.2.2
+   Compiling snap v1.1.1
+   Compiling dyn-clone v1.0.20
+   Compiling ethrex-vm v9.0.0 (/home/0xalizk/sharded-pir/binary-node/ethrex/crates/vm)
+   Compiling time v0.3.46
+   Compiling idna v1.1.0
+   Compiling spawned-rt v0.5.0
+   Compiling futures v0.3.31
+   Compiling ethrex-metrics v9.0.0 (/home/0xalizk/sharded-pir/binary-node/ethrex/crates/blockchain/metrics)
+   Compiling tokio-native-tls v0.3.1
+   Compiling ghash v0.5.1
+   Compiling aes v0.8.4
+   Compiling ctr v0.9.2
+   Compiling derive_builder v0.20.2
+   Compiling vergen v9.0.6
+   Compiling aead v0.5.2
+   Compiling spawned-macros v0.5.0
+   Compiling ring v0.17.14
+   Compiling iri-string v0.7.10
+   Compiling semver v1.0.27
+   Compiling rustix v1.1.3
+   Compiling rustc_version v0.4.1
+   Compiling tower-http v0.6.8
+   Compiling spawned-concurrency v0.5.0
+   Compiling aes-gcm v0.10.3
+   Compiling hyper-tls v0.6.0
+   Compiling url v2.5.8
+   Compiling anstyle-parse v0.2.7
+   Compiling vergen-git2 v1.0.7
+   Compiling nix v0.29.0
+   Compiling hkdf v0.12.4
+   Compiling headers-core v0.3.0
+   Compiling concat-kdf v0.1.0
+   Compiling rustls-pki-types v1.14.0
+   Compiling proc-macro-error-attr2 v2.0.0
+   Compiling encoding_rs v0.8.35
+   Compiling linux-raw-sys v0.11.0
+   Compiling num_threads v0.1.7
+   Compiling untrusted v0.9.0
+   Compiling anstyle-query v1.1.5
+   Compiling anstyle v1.0.13
+   Compiling is_terminal_polyfill v1.70.2
+   Compiling colorchoice v1.0.4
+   Compiling anstream v0.6.21
+   Compiling reqwest v0.12.28
+   Compiling proc-macro-error2 v2.0.1
+   Compiling headers v0.4.1
+   Compiling simple_asn1 v0.6.3
+   Compiling pem v3.0.6
+   Compiling tikv-jemalloc-sys v0.6.1+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7
+   Compiling nibble_vec v0.1.0
+   Compiling endian-type v0.1.2
+   Compiling clap_lex v0.7.7
+   Compiling radix_trie v0.2.1
+   Compiling clap_builder v4.5.54
+   Compiling jsonwebtoken v9.3.1
+   Compiling axum-extra v0.10.3
+   Compiling fd-lock v4.0.4
+   Compiling getset v0.1.6
+   Compiling clap_derive v4.5.49
+   Compiling uuid v1.20.0
+   Compiling neli-proc-macros v0.2.2
+   Compiling envy v0.4.2
+   Compiling rustyline-derive v0.11.1
+   Compiling keccak v0.1.5
+   Compiling option-ext v0.2.0
+   Compiling eyre v0.6.12
+   Compiling home v0.5.12
+   Compiling unicode-width v0.2.0
+   Compiling clap v4.5.54
+   Compiling dirs-sys v0.4.1
+   Compiling rustyline v15.0.0
+   Compiling sha3 v0.10.8
+   Compiling neli v0.7.3
+   Compiling colored v2.2.0
+   Compiling indenter v0.3.4
+   Compiling ethrex-repl v9.0.0 (/home/0xalizk/sharded-pir/binary-node/ethrex/tooling/repl)
+   Compiling local-ip-address v0.6.9
+   Compiling directories v5.0.1
+   Compiling tracing-appender v0.2.4
+   Compiling memmap2 v0.9.10
+   Compiling git2 v0.20.3
+   Compiling ethrex v9.0.0 (/home/0xalizk/sharded-pir/binary-node/ethrex/cmd/ethrex)
+   Compiling tikv-jemallocator v0.6.1
+   Compiling rocksdb v0.24.0
+   Compiling ethrex-storage v9.0.0 (/home/0xalizk/sharded-pir/binary-node/ethrex/crates/storage)
+warning: unused variable: `cf`
+   --> crates/storage/backend/rocksdb.rs:306:13
+    |
+306 |         let cf = self
+    |             ^^ help: if this is intentional, prefix it with an underscore: `_cf`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: field `background_threads` is never read
+   --> crates/storage/store.rs:249:5
+    |
+199 | pub struct Store {
+    |            ----- field in this struct
+...
+249 |     background_threads: Arc<ThreadList>,
+    |     ^^^^^^^^^^^^^^^^^^
+    |
+    = note: `Store` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+    = note: `#[warn(dead_code)]` on by default
+
+   Compiling ethrex-blockchain v9.0.0 (/home/0xalizk/sharded-pir/binary-node/ethrex/crates/blockchain)
+   Compiling ethrex-p2p v9.0.0 (/home/0xalizk/sharded-pir/binary-node/ethrex/crates/networking/p2p)
+warning: unused import: `crate::snap::mpt_stubs::TrieError`
+ --> crates/networking/p2p/rlpx/connection/server.rs:8:5
+  |
+8 | use crate::snap::mpt_stubs::TrieError;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused import: `error::StoreError`
+  --> crates/networking/p2p/rlpx/connection/server.rs:48:29
+   |
+48 | use ethrex_storage::{Store, error::StoreError};
+   |                             ^^^^^^^^^^^^^^^^^
+
+warning: unused import: `std::path::PathBuf`
+ --> crates/networking/p2p/sync/snap_sync.rs:9:5
+  |
+9 | use std::path::PathBuf;
+  |     ^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `crate::snap::mpt_stubs::Trie`
+  --> crates/networking/p2p/sync/snap_sync.rs:15:5
+   |
+15 | use crate::snap::mpt_stubs::Trie;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `AccountState`
+  --> crates/networking/p2p/sync/snap_sync.rs:17:28
+   |
+17 | use ethrex_common::types::{AccountState, BlockHeader, Code};
+   |                            ^^^^^^^^^^^^
+
+warning: unused imports: `EMPTY_KECCACK_HASH` and `EMPTY_TRIE_HASH`
+  --> crates/networking/p2p/sync/snap_sync.rs:20:17
+   |
+20 |     constants::{EMPTY_KECCACK_HASH, EMPTY_TRIE_HASH},
+   |                 ^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^
+
+warning: unused import: `error`
+  --> crates/networking/p2p/sync/snap_sync.rs:24:22
+   |
+24 | use tracing::{debug, error, info, warn};
+   |                      ^^^^^
+
+warning: `ethrex-storage` (lib) generated 2 warnings
+warning: unused variable: `store`
+   --> crates/networking/p2p/snap/client.rs:535:5
+    |
+535 |     store: Store,
+    |     ^^^^^ help: if this is intentional, prefix it with an underscore: `_store`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: unused import: `decode::RLPDecode`
+  --> crates/networking/p2p/snap/client.rs:33:18
+   |
+33 | use ethrex_rlp::{decode::RLPDecode, encode::RLPEncode};
+   |                  ^^^^^^^^^^^^^^^^^
+
+warning: field `healing_empty_try_recv` is never read
+  --> crates/networking/p2p/metrics.rs:87:9
+   |
+20 | pub struct Metrics {
+   |            ------- field in this struct
+...
+87 |     pub healing_empty_try_recv: AtomicU64,
+   |         ^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `Metrics` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+   = note: `#[warn(dead_code)]` on by default
+
+warning: function `proof_to_encodable` is never used
+  --> crates/networking/p2p/snap/mod.rs:40:15
+   |
+40 | pub(crate) fn proof_to_encodable(proof: Vec<Vec<u8>>) -> Vec<Bytes> {
+   |               ^^^^^^^^^^^^^^^^^^
+
+warning: methods `add`, `flush_if_needed`, and `check_previous_task` are never used
+  --> crates/networking/p2p/sync/code_collector.rs:36:12
+   |
+24 | impl CodeHashCollector {
+   | ---------------------- methods in this implementation
+...
+36 |     pub fn add(&mut self, hash: H256) {
+   |            ^^^
+...
+48 |     pub async fn flush_if_needed(&mut self) -> Result<(), SyncError> {
+   |                  ^^^^^^^^^^^^^^^
+...
+92 |     async fn check_previous_task(&mut self) -> Result<(), SyncError> {
+   |              ^^^^^^^^^^^^^^^^^^^
+
+warning: struct `HealingQueueEntry` is never constructed
+ --> crates/networking/p2p/sync/healing/types.rs:7:12
+  |
+7 | pub struct HealingQueueEntry {
+  |            ^^^^^^^^^^^^^^^^^
+
+warning: type alias `StateHealingQueue` is never used
+  --> crates/networking/p2p/sync/healing/types.rs:14:10
+   |
+14 | pub type StateHealingQueue = HashMap<Nibbles, HealingQueueEntry>;
+   |          ^^^^^^^^^^^^^^^^^
+
+   Compiling ethrex-rpc v9.0.0 (/home/0xalizk/sharded-pir/binary-node/ethrex/crates/networking/rpc)
+   Compiling ethrex-config v9.0.0 (/home/0xalizk/sharded-pir/binary-node/ethrex/crates/common/config)
+   Compiling ethrex-dev v9.0.0 (/home/0xalizk/sharded-pir/binary-node/ethrex/crates/blockchain/dev)
+warning: fields `flush_interval` and `preimage_file_size` are never read
+  --> cmd/ethrex/migrate.rs:30:5
+   |
+28 | struct MigrateConfig {
+   |        ------------- fields in this struct
+29 |     in_memory: bool,
+30 |     flush_interval: u64,
+   |     ^^^^^^^^^^^^^^
+31 |     preimage_file_size: u64,
+   |     ^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: `ethrex` (lib) generated 1 warning
+warning: `ethrex-p2p` (lib) generated 14 warnings (run `cargo fix --lib -p ethrex-p2p` to apply 7 suggestions)
+    Finished `release` profile [optimized] target(s) in 21m 53s

@@ -1,0 +1,27 @@
+[package]
+name = "reth-state-extractor"
+version = "0.1.0"
+edition = "2021"
+description = "Read a reth v2.2.0 plain-state DB and emit Geth gethdbdump files (preimages/snapshot/code) for ethrex `migrate` (EIP-7864 binary trie bootstrap)."
+
+[[bin]]
+name = "reth-state-extractor"
+path = "src/main.rs"
+
+[dependencies]
+# reth DB plumbing, pinned to the snapshot's client version (v2.2.0). These ARE
+# workspace members in the reth git tree (verified in reth's Cargo.lock @ v2.2.0).
+# Account/StorageEntry/Bytecode types + the Compact codec come transitively from
+# reth-primitives-traits/reth-codecs 0.3.1 (crates.io) — we access their fields via
+# type inference, so we don't depend on them directly.
+reth-db = { git = "https://github.com/paradigmxyz/reth", tag = "v2.2.0" }
+reth-db-api = { git = "https://github.com/paradigmxyz/reth", tag = "v2.2.0" }
+
+# Must match reth v2.2.0's alloy-primitives (Cargo.lock) so B256/Address/U256 type
+# identity holds across the reth API boundary.
+alloy-primitives = "=1.5.7"
+
+eyre = "0.6"
+
+[profile.release]
+opt-level = 3
