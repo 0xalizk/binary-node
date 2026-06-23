@@ -1,0 +1,39 @@
+phase 1: stream snapshot; accounts -> out, storage -> 256 buckets by keccak(slot)[0]
+  scanned 100000000 accounts + 0 storage
+  scanned 200000000 accounts + 0 storage
+  scanned 300000000 accounts + 0 storage
+  scanned 395142821 accounts + 4857179 storage
+  scanned 395142821 accounts + 104857179 storage
+  scanned 395142821 accounts + 204857179 storage
+  scanned 395142821 accounts + 304857179 storage
+  scanned 395142821 accounts + 404857179 storage
+  scanned 395142821 accounts + 504857179 storage
+  scanned 395142821 accounts + 604857179 storage
+  scanned 395142821 accounts + 704857179 storage
+  scanned 395142821 accounts + 804857179 storage
+  scanned 395142821 accounts + 904857179 storage
+  scanned 395142821 accounts + 1004857179 storage
+  scanned 395142821 accounts + 1104857179 storage
+  scanned 395142821 accounts + 1204857179 storage
+  scanned 395142821 accounts + 1304857179 storage
+  scanned 395142821 accounts + 1404857179 storage
+  scanned 395142821 accounts + 1504857179 storage
+phase 1 done: 395142821 accounts (emitted), 1592302169 storage (bucketed)
+phase 2: sort each bucket by keccak(slot) and append to out
+  through bucket 00: 5976396 storage emitted
+  through bucket 10: 104768671 storage emitted
+  through bucket 20: 200887133 storage emitted
+  through bucket 30: 320663899 storage emitted
+  through bucket 40: 421589413 storage emitted
+  through bucket 50: 517752238 storage emitted
+  through bucket 60: 613451109 storage emitted
+  through bucket 70: 711875248 storage emitted
+  through bucket 80: 808345900 storage emitted
+  through bucket 90: 907006254 storage emitted
+  through bucket a0: 1002433110 storage emitted
+  through bucket b0: 1099464446 storage emitted
+  through bucket c0: 1204537665 storage emitted
+  through bucket d0: 1306731160 storage emitted
+  through bucket e0: 1403993377 storage emitted
+  through bucket f0: 1499615796 storage emitted
+done: 395142821 accounts + 1592302169 storage = 1987444990 entries -> /home/0xalizk/sharded-pir/binary-node/gethdump/mainnet/snapshot-sorted.rlp

@@ -1,0 +1,13 @@
+### snapshot export 09:01:52
+INFO [06-20|14:44:08.291] Exporting chain data                     file=gethdump/mainnet/snapshot.rlp kind=snapshot count=1,985,666,000 elapsed=5h42m5.808s
+INFO [06-20|14:44:16.300] Exporting chain data                     file=gethdump/mainnet/snapshot.rlp kind=snapshot count=1,986,440,000 elapsed=5h42m13.817s
+INFO [06-20|14:44:24.304] Exporting chain data                     file=gethdump/mainnet/snapshot.rlp kind=snapshot count=1,987,238,000 elapsed=5h42m21.821s
+INFO [06-20|14:44:26.553] Exported chain data                      file=gethdump/mainnet/snapshot.rlp kind=snapshot count=1,987,444,991 elapsed=5h42m24.070s
+snapshot exit=0 size=140G
+### code export 14:44:30
+INFO [06-20|14:46:23.286] Exporting chain data                     file=gethdump/mainnet/code.rlp kind=code count=2,085,000 elapsed=1m44.326s
+INFO [06-20|14:46:31.339] Exporting chain data                     file=gethdump/mainnet/code.rlp kind=code count=2,266,000 elapsed=1m52.378s
+INFO [06-20|14:46:39.359] Exporting chain data                     file=gethdump/mainnet/code.rlp kind=code count=2,439,000 elapsed=2m0.398s
+INFO [06-20|14:46:39.633] Exported chain data                      file=gethdump/mainnet/code.rlp kind=code count=2,444,221 elapsed=2m0.673s
+code exit=0 size=14G
+### EXPORTS DONE 14:46:41

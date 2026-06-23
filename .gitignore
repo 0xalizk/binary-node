@@ -22,3 +22,26 @@
 *.swo
 *~
 .DS_Store
+
+# --- Mainnet bootstrap data artifacts (added 2026-06-23; NEVER push) ---
+/bn-datadir/
+/mainnet-binary-dd/
+/mainnet-dd/
+/duckdb-tmp/
+/duckdb
+# Xatu: keep scripts (*.sh, *.py), drop all data
+/xatu-preimages/xatu-raw/
+/xatu-preimages/distinct/
+/xatu-preimages/parts_addrs/
+/xatu-preimages/parts_slots/
+# belt-and-suspenders: no bulk data anywhere
+*.rlp
+*.parquet
+*.bin
+
+# Internal outreach/message drafts (never publish)
+/planning/**/*outreach*
+/docs/**/*outreach*
+
+# xatu debug/data text dumps (regenerable)
+/xatu-preimages/*.txt

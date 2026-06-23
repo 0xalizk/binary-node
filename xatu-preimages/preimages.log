@@ -1,0 +1,20 @@
+phase 1: keccak + partition into 256 buckets
+phase 1 done: 1356182834 slots + 416358752 addrs = 1772541586 values
+phase 2: sort buckets + emit xatu-preimages/preimages.rlp
+  emitted through bucket 00: 6921484 entries
+  emitted through bucket 10: 117724239 entries
+  emitted through bucket 20: 228492504 entries
+  emitted through bucket 30: 339286226 entries
+  emitted through bucket 40: 450048135 entries
+  emitted through bucket 50: 560846062 entries
+  emitted through bucket 60: 671637292 entries
+  emitted through bucket 70: 782433469 entries
+  emitted through bucket 80: 893195946 entries
+  emitted through bucket 90: 1003981967 entries
+  emitted through bucket a0: 1114779922 entries
+  emitted through bucket b0: 1225540644 entries
+  emitted through bucket c0: 1336315597 entries
+  emitted through bucket d0: 1447111639 entries
+  emitted through bucket e0: 1557887344 entries
+  emitted through bucket f0: 1668677182 entries
+done: 1772541586 preimage entries -> xatu-preimages/preimages.rlp

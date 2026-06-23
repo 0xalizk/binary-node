@@ -1,0 +1,17 @@
+[package]
+name = "preimage-builder"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "preimage-builder"
+path = "src/main.rs"
+
+[dependencies]
+parquet = "53"
+arrow-array = "53"
+tiny-keccak = { version = "2", features = ["keccak"] }
+eyre = "0.6"
+
+[profile.release]
+opt-level = 3

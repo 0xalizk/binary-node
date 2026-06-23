@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>binary-node — decided approach (iteration 4)</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6; max-width: 860px; margin: 2.5rem auto; padding: 0 1.2rem; color: #1a1a1a; }
+  h2 { margin-top: 2.2rem; padding-bottom: .3rem; border-bottom: 1px solid #ddd; font-size: 1.45rem; }
+  h3 { margin-top: 1.6rem; font-size: 1.15rem; }
+  code { background: #f3f3f3; padding: .15em .35em; border-radius: 4px; font-size: .9em;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  pre { background: #f6f8fa; padding: 1rem; border-radius: 8px; overflow-x: auto; border: 1px solid #e5e5e5; }
+  pre code { background: none; padding: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; display: block; overflow-x: auto; }
+  th, td { border: 1px solid #d5d5d5; padding: .5rem .7rem; text-align: left; vertical-align: top; }
+  th { background: #f3f3f3; }
+  blockquote { border-left: 4px solid #ccc; margin: 1rem 0; padding: .2rem 1rem; color: #555; }
+  a { color: #0a58ca; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e6e6e6; background: #16181c; }
+    h2 { border-color: #333; } code { background: #2a2d33; }
+    pre { background: #1e2127; border-color: #333; }
+    th { background: #23262c; } th, td { border-color: #3a3d44; }
+    blockquote { border-color: #444; color: #aaa; } a { color: #6ea8fe; }
+  }
+</style></head>
+<body>
+<h2 id="decided-approach-iteration-4">Decided approach (iteration 4)</h2>
+<p>Final plan after the snapshot-bootstrap detours. Bootstrap the EIP-7864 binary-trie
+state from <strong>geth snapshot values + Xatu preimages</strong>, then run the binary-node as a
+p2p-disabled shadow of the live MPT node with a per-block equivalence check.</p>
+<p>Audience: Ethereum-literate devs; client/sync internals explained inline.</p>
+<h2 id="why-preimages-are-the-blocker">Why preimages are the blocker</h2>
+<p>State is keyed by hashes, and the two trees use <em>different</em> hashes:
+- MPT (today): account at <code>keccak256(address)</code>, storage at <code>keccak256(slot)</code>.
+- EIP-7864 binary trie: keys derived via <strong>BLAKE3</strong> over the <em>raw</em> address/slot —
+  <code>get_tree_key(address, tree_index, sub_index) = BLAKE3(address32 ++ tree_index)[..31] ++ sub_index</code>,
+  with multiple account fields packed under one stem and storage folded from raw
+  <code>(address, slot)</code> (<code>crates/common/binary_trie/key_mapping.rs</code>).</p>
+<p>Both hash, but you can't go <code>keccak256(address) → BLAKE3 key</code> directly: keccak is
+one-way, and BLAKE3 needs the raw <code>address</code> as input. The <strong>raw address/slot is the only
+bridge</strong> — the shared preimage both schemes consume:</p>
+<pre><code>keccak256(addr)  --preimage lookup--&gt;  addr  --BLAKE3 derivation--&gt;  binary-trie key
+</code></pre>
+<p>So a snapshot whose preimage set is incomplete yields a structurally incomplete tree
+(migrate cannot compute keys for the missing accounts; it skips them).</p>
+<h2 id="two-data-sources-two-halves">Two data sources, two halves</h2>
+<p><code>ethrex migrate</code> (branch <code>eip-7864-plan</code>) consumes three Geth <code>gethdbdump</code> streams —
+preimages, snapshot (state values), code — and derives the BLAKE3 keys itself
+(see <code>03_ethrex_migrate_findings.md</code>, <code>06_gethdump_format.md</code>). We supply:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>geth snapshot (ethPandaOps)</th>
+<th>Xatu canonical_execution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Provides</td>
+<td>state <strong>values</strong> at block 25,340,000 (accounts: nonce/balance/codehash; storage values; code)</td>
+<td>the <strong>preimages</strong> — raw addresses + slot keys, complete, from block 0</td>
+</tr>
+<tr>
+<td>Keyed by</td>
+<td><code>keccak256(...)</code> (hashed)</td>
+<td>raw (un-hashed)</td>
+</tr>
+<tr>
+<td>Why this one</td>
+<td>authoritative current state; also the MPT oracle the equiv-daemon checks against</td>
+<td>its snap-synced <code>--cache.preimages</code> is only ~77% complete (dormant accounts never locally executed); Xatu's genesis-onward diffs are complete</td>
+</tr>
+<tr>
+<td>We take</td>
+<td><code>snapshot.rlp</code> (values) + <code>code.rlp</code> (bytecode)</td>
+<td>distinct addresses + distinct slot keys only (ignore its values)</td>
+</tr>
+</tbody>
+</table>
+<p>geth supplies <em>what accounts hold</em>; Xatu supplies <em>what they are addressed by</em>. Neither
+alone suffices; migrate joins them. (reth was rejected — v2.2.0 stores hashed state with
+no preimages at all; see <code>07_CRITICAL_reth_has_no_preimages.md</code>,
+<code>08_CRITICAL_geth_preimages_incomplete.md</code>.)</p>
+<h2 id="bootstrap-pipeline">Bootstrap pipeline</h2>
+<ol>
+<li><strong>geth exports.</strong> <code>tar</code>-extract the snapshot to a datadir, then
+   <code>geth db export snapshot</code> → <code>snapshot.rlp</code> and <code>geth db export code</code> → <code>code.rlp</code>
+   (patched <code>edg-l/go-ethereum@feat/export-code</code>, == geth v1.17.2). Skip the preimage
+   export (Xatu replaces it). Then delete the tarball + extracted datadir (~2.4 TB).</li>
+<li><strong>Xatu distinct extraction.</strong> DuckDB over the ~953 GB of local Parquet:
+   <code>DISTINCT address</code> (union of balance_diffs ∪ nonce_diffs ∪ contracts ∪
+   storage_diffs.address) and <code>DISTINCT slot</code> (storage_diffs.slot). Then delete the raw
+   Parquet (~953 GB).</li>
+<li><strong>Preimage file.</strong> Fast parallel Rust keccak over the distinct sets → complete
+   <code>preimages.rlp</code> in gethdbdump format, sorted by hash (mmap-mode requirement). Value
+   length tags addr (20B) vs slot (32B).</li>
+<li><strong>migrate.</strong>
+   <code>ethrex --network mainnet --datadir &lt;bn-dd&gt; migrate &lt;xatu-preimages.rlp&gt; &lt;geth-snapshot.rlp&gt; --code &lt;geth-code.rlp&gt; --at-block 25340000</code>.
+   Builds the binary-trie state DB (RocksDB) at the snapshot block. <strong>Milestone:
+   skipped ≈ 0</strong> (vs Hoodi's 10.27M) — the proof the preimage set is complete.
+   <code>--at-block</code> records where to resume; state-root validation is disabled on the branch.</li>
+<li><strong>Launch binary-node.</strong> Start the fork binary on <code>&lt;bn-dd&gt;</code> → a live node holding
+   mainnet state in the binary trie as of block 25,340,000.</li>
+<li><strong>Wire the shadow.</strong> Feeder + equiv-daemon (below), then forward-execute from the
+   snapshot block and begin per-block checks.</li>
+</ol>
+<h2 id="target-architecture-both-on-this-one-host">Target architecture (both on this one host)</h2>
+<ul>
+<li><strong>Vanilla node (authoritative, unchanged):</strong> ethrex v16.0.0 (<code>ethrex.service</code>), MPT,
+  p2p-synced to mainnet head. Ground-truth reference; never modified.</li>
+<li><strong>binary-node (shadow):</strong> forked ethrex (<code>eip-7864-plan</code>), binary-trie state, <strong>its own
+  datadir</strong>, <strong>p2p disabled</strong>. It does not sync itself.</li>
+<li><strong>Feeder:</strong> pulls each new canonical block from the vanilla node and feeds it to the
+  binary-node, which executes it and updates the binary trie. Both clients thus process
+  the identical block stream — one into an MPT, one into a binary trie.</li>
+<li><strong>equiv-daemon:</strong> per block, compares value-level state (getBalance / getTransactionCount
+  / getCode / getStorageAt) between the two, cross-checked against the block's EIP-7928
+  BAL as the touched-key oracle; records discrepancies <code>(block, addr, slot, v_mpt, v_bin)</code>;
+  halt at 1000. Compares values, never roots/proofs (the roots differ by design).</li>
+<li><strong>Dashboard:</strong> existing Grafana/Prometheus (datasource <code>prom-001</code>): discrepancy counts,
+  latest offenders, progress, state size, read/write speeds.</li>
+</ul>
+<p>Isolation is three-way — separate binary, separate datadir, p2p off (fed only by the
+feeder) — so the binary-node cannot perturb the live node. Only the host's CPU/disk are
+shared; the binary-node is rate-limited (nice / IOWeight) so the live node keeps priority.</p>
+<h2 id="disk-staging">Disk staging</h2>
+<p>Peak is kept ~2.5–3 TB (of 7.7 TB) by deleting each intermediate once consumed: tarball
+after extraction; extracted geth datadir after exports; raw Xatu Parquet after the distinct
+sets are pulled. Keepers: <code>snapshot.rlp</code>/<code>code.rlp</code>/<code>preimages.rlp</code> (migrate inputs) and
+the final binary-trie DB.</p>
+<h2 id="notes-open-items">Notes / open items</h2>
+<ul>
+<li>Forward-sync-from-mid-chain (<code>--at-block</code>) is documented but unproven end-to-end; the
+  feeder + first forward blocks are the real test (Hoodi couldn't validate it — no Xatu
+  coverage there, and migrate built a deliberately-incomplete tree).</li>
+<li>Archival is out of scope: the branch is non-archive (~128-block window). Genesis archival
+  would require full re-execution; forward archival needs versioned-state retention + much
+  more disk. If historical queries are wanted later, serve them from Xatu, not the node.</li>
+</ul>
+</body></html>
