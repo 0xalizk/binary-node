@@ -45,3 +45,11 @@
 
 # xatu debug/data text dumps (regenerable)
 /xatu-preimages/*.txt
+
+# Session/run artifacts (kept on disk, not pushed)
+/binary-node.log
+/catchup-test.log
+/reseed.log
+/seedcode.log
+/migrate-monitor.sh
+/head_block_25340000.json
