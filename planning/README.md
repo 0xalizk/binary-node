@@ -8,19 +8,20 @@ this.
 
 Read order within any folder is the `NN_` numeric prefix (chronological).
 
-## Current status / what remains  (as of 2026-06-22)
+## Current status / what remains  (as of 2026-06-26)
 
-**Phase: mainnet bootstrap (iteration_4a_ethrex), executing — step 4 (migrate).**
-- Done: toolchain; ethrex fork + patched geth built; geth snapshot (block 25,340,000) exported
-  (`snapshot.rlp` 140 G, `code.rlp` 14 G); Xatu raw (953 G) downloaded; **Xatu distinct** via
-  hash-partition (**1,356,182,834 slots + 416,358,752 accounts**); **`preimages.rlp` built**
-  (1,772,541,586 entries, 106 G, hash-sorted).
-- **Paused (4a):** `migrate` crashed on the FD limit and is projected at *days* on 61 GB RAM
-  (random mmap reads over the 108 G preimage set) → blocked on **devops provisioning**
-  (≥192 GB RAM + NVMe). Inputs intact; re-run with `LimitNOFILE` raised after the upgrade.
-- **In parallel (4b_geth):** exploring whether an EIP-7864-compliant **geth** is a simpler
-  route (research underway).
-- Remaining (4a bootstrap): re-run migrate → launch binary-node → feeder + equiv-daemon + Grafana.
+**Phase: mainnet bootstrap (iteration_4a_ethrex), executing — step 6 (catch-up).**
+- Hardware: **pir-ubt-node** (32 vCPU / 251 GB RAM / ~7 TB NVMe). Migrated datadir (406 G)
+  copied from ubt-node; checkpoint block 25,340,000.
+- Done: toolchain; ethrex fork + patched geth built; geth snapshot exported; Xatu raw downloaded;
+  Xatu distinct; preimages.rlp built; `migrate` complete; `seed-head` + `seed-code` applied.
+  Binary-node datadir at `bn-datadir/`, checkpoint 25,340,000.
+- **Step 6 — active:** `backfill-bodies` running to fill the snap-sync body gap
+  (blocks 25,340,001–25,401,794) in the mainnet EL RocksDB. Once done, `catch-up` will
+  re-execute blocks from 25,340,001 to tip against the binary trie.
+  Three p2p handshake bugs in the ethrex fork fixed 2026-06-26 to make backfill work.
+  See HANDOVER.md for exact next steps and current progress.
+- Remaining: finish catch-up → feeder + equiv-daemon + Grafana (step 7, NOT BUILT).
 - After bootstrap (roadmap): `iteration_5/` — live-status feed on privreads (01), then
   `eth_getProof` on the binary-node (02).
 

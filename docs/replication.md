@@ -2,8 +2,8 @@
 
 How to stand up a binary-node shadow + equivalence check against mainnet. Each step is
 status-tagged: **[done]** validated end-to-end, **[NOT BUILT]** designed but not yet implemented.
-The bootstrap (steps 0–5) and migration are done and validated on mainnet; catch-up (step 6) is
-built but its first full run awaits capable hardware; the equivalence shadow (step 7) is not built.
+The bootstrap (steps 0–5) and migration are done and validated on mainnet. Catch-up (step 6) is
+built and running on pir-ubt-node (32 vCPU / 251 GB RAM / NVMe); the equivalence shadow (step 7) is not built.
 
 ### Overview
 
@@ -145,11 +145,20 @@ backfills `ACCOUNT_CODES` from the geth code export (needed by `eth_getCode` *an
 execution). Then launch the fork on `<bn-dd>` with `--p2p.disabled` + distinct RPC/p2p ports;
 confirm it serves correct balance/nonce/code for known accounts.
 
-### 6. Catch up to the tip  [code built; first full run pending NVMe hardware]
+### 6. Catch up to the tip  [running on pir-ubt-node]
 
 ```
 ethrex --datadir <bn-dd> --network mainnet catch-up [--to <block>] <local-node-rpc>
 ```
+**Prerequisite for snap-synced EL:** A snap-synced ethrex does not retain block bodies before
+its pivot block (~25,401,793). Run `backfill-bodies` first to download the missing bodies
+(blocks 25,340,001-25,401,794) from mainnet p2p into the mainnet EL datadir:
+```
+ethrex --datadir <mainnet-el-datadir> --network mainnet backfill-bodies
+```
+(Three p2p handshake bugs fixed 2026-06-26; see `feat/migrate-seed-and-catchup` history.
+Stop the mainnet EL first for exclusive RocksDB lock; restart after backfill completes.)
+
 Pulls each block from a reachable local mainnet node (`<local-node-rpc>`, e.g.
 `http://127.0.0.1:8545`) and re-executes it against the binary trie, advancing from the migrated
 checkpoint to the tip. **This phase is random-read-bound on the trie** → it's the reason for the
