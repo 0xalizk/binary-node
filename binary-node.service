@@ -1,0 +1,32 @@
+# systemd unit for the binary-node (EIP-7864 shadow, step 6)
+# Install: cp ~/sharded-pir/binary-node/binary-node.service ~/.config/systemd/user/
+#          systemctl --user daemon-reload
+#          systemctl --user enable --now binary-node
+#
+# Uses DISTINCT ports (8645/8651/9190) to avoid clashing with the mainnet EL (8545/8551/9090).
+# p2p disabled — fed only by the feeder (step 7, not yet built).
+
+[Unit]
+Description=ethrex binary-node (EIP-7864 shadow, mainnet)
+After=network.target
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=1048576
+
+ExecStart=%h/sharded-pir/binary-node/ethrex/target/release/ethrex \
+  --datadir %h/sharded-pir/binary-node/bn-datadir \
+  --network mainnet \
+  --http.port 8645 \
+  --authrpc.port 8651 \
+  --metrics.port 9190 \
+  --p2p.disabled
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=binary-node
+
+[Install]
+WantedBy=default.target
