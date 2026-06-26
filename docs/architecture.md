@@ -3,11 +3,16 @@
 Two ethrex processes on one host, processing the identical mainnet block stream into two
 different state representations, with a daemon comparing them.
 
+> **Implementation status:** the vanilla node, the binary-node, and its migrate/seed/catch-up
+> bootstrap are built and working. The **feeder, equiv-daemon, and dashboard described below are
+> the design — not yet implemented.**
+
 ### Components
 
 - **Vanilla node (reference, authoritative):** stock ethrex, MPT state, p2p-synced to mainnet
   head. Ground truth; never modified. (On our host: ethrex v16.0.0, `ethrex.service`.)
-- **binary-node (shadow):** forked ethrex on the `eip-7864-plan` branch — state held in an
+- **binary-node (shadow):** forked ethrex ([`0xalizk/ethrex`](https://github.com/0xalizk/ethrex/tree/feat/migrate-seed-and-catchup),
+  `feat/migrate-seed-and-catchup`, on `lambdaclass/ethrex`'s `eip-7864-plan`) — state held in an
   EIP-7864 binary tree instead of an MPT. **Its own datadir; p2p disabled.** It does not sync
   itself.
 - **Feeder:** pulls each new canonical block from the vanilla node and hands it to the

@@ -24,6 +24,8 @@ node) and a binary tree (this node), with a daemon comparing values block-by-blo
 
 ### Status
 
-Mechanics validated end-to-end on Hoodi; mainnet bootstrap in progress. Sections that depend
-on the live mainnet run are marked **TODO** until verified — this doc does not run ahead of
-what's actually been done.
+Mainnet **bootstrap complete**: state migrated into the binary trie; the node boots and serves
+correct balance/nonce/code at the checkpoint block. **Catch-up** to the tip is built but its first
+full run awaits NVMe-class hardware; the **live feeder + equivalence-daemon + dashboard are not
+yet built**. Steps are status-tagged ([done] / [NOT BUILT]) so this doc never runs ahead of what's
+actually been done.

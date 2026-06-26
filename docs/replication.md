@@ -1,15 +1,17 @@
 ## Replication runbook
 
 How to stand up a binary-node shadow + equivalence check against mainnet. Each step is
-status-tagged: **[done]** validated, **[wip]** in progress on our host, **[todo]** designed
-but not yet executed/written from a real run. This is the seed of the public guide; wip/todo
-sections get filled in as the mainnet bootstrap completes.
+status-tagged: **[done]** validated end-to-end, **[NOT BUILT]** designed but not yet implemented.
+The bootstrap (steps 0–5) and migration are done and validated on mainnet; catch-up (step 6) is
+built but its first full run awaits capable hardware; the equivalence shadow (step 7) is not built.
 
 ### Overview
 
 geth snapshot (state values) + Xatu (complete preimages) → `ethrex migrate` builds the binary
-tree at a recent block → launch the binary-node, feed it blocks from a normal node, compare
-per block. Rationale and rejected alternatives: `design-rationale.md`.
+tree at a recent block → seed + launch the binary-node → `catch-up` re-executes blocks to the
+tip. The end goal is then to feed it blocks from a normal node and compare value-equivalence per
+block — that comparison loop (step 7) is **not built yet**. Rationale and rejected alternatives:
+`design-rationale.md`.
 
 ### Recommended resources
 
@@ -43,15 +45,23 @@ geth extraction + migrate build.
 
 ### 0. Host & prerequisites  [done]
 
-- Linux host with enough disk for the bootstrap (peak ~2.5–3 TB with staged cleanup; see
-  "Disk" below). Ours: 8 core / 61 GB / 7.7 TB.
-- A live, synced normal Ethereum node (the MPT reference) to feed blocks and check against.
+- Linux host. **Recommended: ≥32 vCPU, ≥256 GB RAM, local NVMe SSD** — the live catch-up phase is
+  random-read-latency-bound (see Recommended resources). Disk: the bootstrap peak (~2.5–3 TB with
+  staged cleanup; see "Disk staging") plus the final trie (~400 GB) and headroom. (The numbers in
+  this guide come from our own run on a constrained 8 core / 61 GB / 7.7 TB box — fine for the
+  bootstrap, too slow for live catch-up.)
+- A live, synced normal Ethereum node (the MPT reference) — to export the snapshot from, feed
+  blocks during catch-up, and check against. It must retain block bodies back to the snapshot block.
 - Toolchain: Rust (rustup), Go 1.24+, clang/llvm, cmake, pkg-config, git-lfs, zstd, DuckDB.
 - **ethrex fork** (binary-trie node + `migrate` / `seed-head` / `seed-code` / `catch-up`):
   [`0xalizk/ethrex`](https://github.com/0xalizk/ethrex/tree/feat/migrate-seed-and-catchup) branch
-  `feat/migrate-seed-and-catchup`, `cargo build --release`. Clone shallow; skip LFS test fixtures.
+  `feat/migrate-seed-and-catchup`. Clone with `GIT_LFS_SKIP_SMUDGE=1` (skips ~356 MB of LFS test
+  fixtures not needed to build), then `cargo build --release`.
 - **patched geth** (adds `db export code`): `edg-l/go-ethereum` branch `feat/export-code`
   (geth v1.17.2 base), `go build ./cmd/geth`. Use the geth version matching your snapshot.
+- **Raise the open-file limit** for every step that opens the binary-trie RocksDB — migrate,
+  `seed-code`, `catch-up`, and the node run: `ulimit -n 1048576` (or `LimitNOFILE=1048576` in a
+  systemd unit). RocksDB opens many SSTs; the default limit triggers "too many open files".
 
 ### 1. Obtain state values — geth snapshot exports  [done]
 
@@ -100,6 +110,11 @@ the snapshot's storage entries by `keccak(slot)` first** ([`snapshot-resorter/`]
 so the lookups become monotonic/sequential → migrate becomes memory-bound and runs in hours even
 on a small-RAM box. Output is provably identical (migrate writes a temp CF sorted by tree-key, so
 input order can't change the result).
+```
+snapshot-resorter resort <snapshot.rlp> <snapshot-sorted.rlp> <tmp_dir>
+```
+`tmp_dir` holds 256 transient bucket files (≈ the snapshot's size) — put it on the same fast disk;
+feed `<snapshot-sorted.rlp>` to migrate in the next step.
 
 ### 4. Migrate  [done]
 
@@ -119,29 +134,46 @@ trie, not a head block or the flat code table → seed those next.
 `migrate` leaves the datadir unbootable (no head block) and code-incomplete (`ACCOUNT_CODES`
 empty), so seed both before launching:
 ```
-ethrex --datadir <bn-dd> --network mainnet seed-head <head-block.json> --state-root <binary-root>
+ethrex --datadir <bn-dd> --network mainnet seed-head --state-root <binary-root> <head-block.json>
 ethrex --datadir <bn-dd> --network mainnet seed-code <code.rlp>
 ```
-`seed-head` stores the **real** head block header (fetch it via `eth_getBlockByNumber(<N>,false)`
-→ JSON) as the canonical head and records the binary-trie checkpoint, so the node can establish a
-head; `seed-code` backfills `ACCOUNT_CODES` from the geth code export (needed by `eth_getCode`
-*and* block execution). Then launch the fork on `<bn-dd>` with `--p2p.disabled` + distinct ports;
+(`<binary-root>` is the `Binary trie state root` migrate printed; `<head-block.json>` is the
+`eth_getBlockByNumber(<N>,false)` JSON for the snapshot block. Both open the RocksDB → keep the
+raised FD limit from step 0.) `seed-head` stores the **real** head block header as the canonical
+head and records the binary-trie checkpoint, so the node can establish a head; `seed-code`
+backfills `ACCOUNT_CODES` from the geth code export (needed by `eth_getCode` *and* block
+execution). Then launch the fork on `<bn-dd>` with `--p2p.disabled` + distinct RPC/p2p ports;
 confirm it serves correct balance/nonce/code for known accounts.
 
-### 6. Catch up to the tip, then run the shadow  [wip]
+### 6. Catch up to the tip  [code built; first full run pending NVMe hardware]
 
-`ethrex --datadir <bn-dd> --network mainnet catch-up <local-node-rpc> [--to <block>]` pulls blocks
-from the reference node and executes each against the binary trie, advancing from the migrated
-checkpoint to the tip. This phase is **random-read-bound on the trie** → it needs the recommended
-NVMe + RAM (it's the reason for the hardware spec, not the bootstrap). Once at the tip, the
-feeder/equiv-daemon compares value-level state per block (BAL-driven), records discrepancies, and
-exports Prometheus → Grafana. See `architecture.md`.
+```
+ethrex --datadir <bn-dd> --network mainnet catch-up [--to <block>] <local-node-rpc>
+```
+Pulls each block from a reachable local mainnet node (`<local-node-rpc>`, e.g.
+`http://127.0.0.1:8545`) and re-executes it against the binary trie, advancing from the migrated
+checkpoint to the tip. **This phase is random-read-bound on the trie** → it's the reason for the
+NVMe + RAM spec, not the bootstrap. Keep the raised FD limit. Safe to interrupt and resume (it
+restarts from the trie checkpoint). Two notes:
+- **Validate on a small range first:** `catch-up --to <checkpoint+10> <rpc>`, confirm the head
+  advances and a balance/code spot-check matches, *before* the full backlog.
+- The tip is sampled once per run, so a long run finishes slightly behind — re-run until it
+  reaches the live tip, then hand off to the feeder.
+
+### 7. Run the shadow — feeder + equivalence-daemon + dashboard  [NOT BUILT]
+
+Designed, not yet implemented. A feeder pulls each new canonical block from the reference node →
+binary-node executes it; the equiv-daemon compares value-level state per block (BAL-driven),
+records discrepancies, and exports Prometheus → Grafana (see `architecture.md`). **Until this
+exists, the pipeline yields a binary-trie node caught up to the tip and serving state — not yet a
+running equivalence shadow.**
 
 ### Lessons / gotchas (hard-won)
 
-- **Hard-cap heavy jobs or they kill the live node.** This box shares ONE virtual disk with a
-  live mainnet node; an unthrottled DuckDB scan saturated I/O → the node went `el_offline` and
-  fell ~140 slots behind. Run every heavy job under a systemd cap (`IOReadBandwidthMax` /
+- **Hard-cap heavy jobs or they kill the live node.** If the binary-node work shares one disk
+  with a live mainnet node (as in our run), an unthrottled DuckDB scan can saturate I/O → in ours
+  the node went `el_offline` and fell ~140 slots behind. Run every heavy job under a systemd cap
+  (`IOReadBandwidthMax` /
   `IOWriteBandwidthMax` ~100 M, `CPUQuota`, `Nice`) + a watcher that aborts on `el_offline` /
   high load. `nice` alone is NOT enough — it only limits CPU; disk I/O is the bottleneck.
 - **Validate downloads by content, not size** — dropped connections leave truncated Parquet

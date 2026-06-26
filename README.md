@@ -29,11 +29,17 @@ docs + journal), the [**ethrex fork**](https://github.com/0xalizk/ethrex/tree/fe
 3. **Re-sort + migrate** — re-sort the snapshot by `keccak(slot)` ([`snapshot-resorter/`](snapshot-resorter/))
    so `ethrex migrate`'s preimage lookups go sequential (memory-bound), then `ethrex migrate` builds the binary trie.
 4. **Seed** the datadir bootable + code-complete: `ethrex seed-head …` then `ethrex seed-code …`.
-5. **Catch up + shadow** — `ethrex catch-up <local-node-rpc>` executes forward to the tip, then run
-   the node (p2p off) with the equivalence feeder.
+5. **Catch up** — `ethrex catch-up <local-node-rpc>` re-executes blocks forward to the tip, then
+   run the node (`--p2p.disabled`). Raise the open-file limit (`ulimit -n 1048576`) for the
+   seed / catch-up / run steps — RocksDB opens many SSTs.
 
-**Shortcut (fast path):** already have a migrated datadir? Skip 1–4 — copy it over and start at
-**catch-up** (step 5).
+> ⚠️ **The live feeder + equivalence-daemon + Grafana are not built yet.** Today the pipeline
+> gets you a binary-trie node bootstrapped, caught up to the tip, and serving state; the per-block
+> binary↔MPT comparison loop is still to come.
+
+**Shortcut (fast path), if you already have a migrated datadir:** skip 1–4 — **first stop any node
+holding that datadir** (RocksDB takes a single-process lock, so copying a live datadir yields a
+corrupt copy), then copy it over and start at **catch-up** (step 5).
 
 ### Status: mainnet binary trie built ✅
 
@@ -45,9 +51,10 @@ Binary trie state root: 0x7f29471437843deeb81ddeb09e1121d9c21f5f03fe737936366fd8
 Collection complete: 388,383,489 accounts, 1,563,779,711 storage slots, 3,666,719,467 entries
 ```
 
-Known caveat under investigation: ~1.78% of accounts/slots lacked a preimage in our derived
-set and were skipped (coverage gap, not a pipeline failure) — see `planning/` and
-`docs/design-rationale.md`. Next steps: launch the shadow node + equivalence daemon.
+The node also **boots and serves correct balance/nonce/code** at the checkpoint block.
+Known caveat: ~1.78% of accounts/slots lacked a preimage in the derived set and were skipped
+(coverage gap, not a pipeline failure) — see `planning/` and `docs/design-rationale.md`. Next:
+catch up to the tip (on NVMe hardware — see below), then build the equivalence daemon.
 
 ### The core problem, and how it's solved
 
@@ -82,8 +89,9 @@ tree key, so input order can't change the result). See `snapshot-resorter/`.
 3  keccak -> preimages.rlp                                            (preimage-builder/)
 3.5 snapshot-resort   -> snapshot-sorted.rlp                          (snapshot-resorter/)
 4  migrate            -> binary trie (RocksDB datadir)
-5  launch binary-node (p2p off, fed by mainnet node)
-6  feeder + equivalence daemon + Grafana
+5  seed-head + seed-code, launch binary-node (p2p off)
+6  catch-up           -> re-execute blocks from the checkpoint to the tip
+7  feeder + equivalence daemon + Grafana                 (NOT BUILT YET)
 ```
 
 Full step-by-step: **`docs/replication.md`**. Design rationale + rejected approaches:
@@ -108,7 +116,8 @@ git-ignored — regenerate via the pipeline.
 
 - **ethrex** (binary-trie node + `migrate` / `seed-head` / `seed-code` / `catch-up`):
   [`0xalizk/ethrex`](https://github.com/0xalizk/ethrex/tree/feat/migrate-seed-and-catchup) branch
-  `feat/migrate-seed-and-catchup` (a fork of `lambdaclass/ethrex`'s `eip-7864-plan`). Build with
+  `feat/migrate-seed-and-catchup` (a fork of `lambdaclass/ethrex`'s `eip-7864-plan`). Clone with
+  `GIT_LFS_SKIP_SMUDGE=1` (skips ~356 MB of LFS test fixtures not needed to build), then
   `cargo build --release`. (The `migrate` skipped-slots fix is also up as a PR to upstream.)
 - **patched geth** (adds `db export code`): `edg-l/go-ethereum` branch `feat/export-code`
   (geth v1.17.2 base).
