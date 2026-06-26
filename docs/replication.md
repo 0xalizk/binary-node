@@ -17,13 +17,14 @@ Sized from this run (mainnet @ block 25,340,000: ~1.99 B state entries → 1.36 
 + 416 M accounts → 1.77 B preimages, 106 G `preimages.rlp`). **The bootstrap is the peak
 demand**; steady-state shadowing afterward is far lighter (~1 block / 12 s).
 
-- **RAM — the dominant lever.** The recurring constraint is "does the working set fit in RAM."
-  61 GB (our box) *works* but forces workarounds: single-pass `DISTINCT`/sort OOM at ~1 B+ rows
-  (→ hash-partition), and migrate drops to **mmap mode** because the ~108 G preimage bins can't
-  be cached → its collect phase becomes random-disk-bound (~2 MB/s, ~19 h). **≥128–192 GB
-  recommended** — enough to keep the ~108 G preimage bins in page cache, which makes migrate's
-  collect memory-bound (~1–2 h vs ~19 h) and lets the simpler in-memory distinct / migrate
-  `--fast` paths just work.
+- **RAM + NVMe — and the live phase is the real driver.** 61 GB (our box) *works* for the
+  bootstrap with workarounds: hash-partition the `DISTINCT`/sort (single-pass OOMs at ~1 B+ rows),
+  and **re-sort the snapshot** (step 3.5) so migrate's preimage lookups go sequential — memory-bound
+  in hours instead of ~19 h of random reads, no big RAM needed. The harder constraint is the live
+  **`catch-up` / shadow phase**: per-block binary-trie execution does random reads into the ~400 G
+  trie that can't be cached on a small box, and (unlike migrate's input) live block order can't be
+  pre-sorted. That needs **256 GB RAM + local NVMe** — random-read *latency* is the bottleneck, so
+  network-attached / HDD-class volumes won't keep up.
 - **Disk I/O — the hottest contention, especially random reads.** Sequential stages (Xatu
   distinct, partition, keccak) are high-*bandwidth*; **migrate's collect is random-read-heavy**
   (binary-search over the preimage bins) → IOPS/latency-bound and by far the slowest stage on a
@@ -46,8 +47,9 @@ geth extraction + migrate build.
   "Disk" below). Ours: 8 core / 61 GB / 7.7 TB.
 - A live, synced normal Ethereum node (the MPT reference) to feed blocks and check against.
 - Toolchain: Rust (rustup), Go 1.24+, clang/llvm, cmake, pkg-config, git-lfs, zstd, DuckDB.
-- **ethrex fork** (binary-trie node + `migrate`): `lambdaclass/ethrex` branch `eip-7864-plan`,
-  `cargo build --release` (built at commit `b0fe293`). Clone shallow; skip LFS test fixtures.
+- **ethrex fork** (binary-trie node + `migrate` / `seed-head` / `seed-code` / `catch-up`):
+  [`0xalizk/ethrex`](https://github.com/0xalizk/ethrex/tree/feat/migrate-seed-and-catchup) branch
+  `feat/migrate-seed-and-catchup`, `cargo build --release`. Clone shallow; skip LFS test fixtures.
 - **patched geth** (adds `db export code`): `edg-l/go-ethereum` branch `feat/export-code`
   (geth v1.17.2 base), `go build ./cmd/geth`. Use the geth version matching your snapshot.
 
@@ -89,26 +91,51 @@ stream `keccak(x) → x` (value length tags addr=20 B vs slot=32 B), **globally 
 hash-partition trick (route by `hash[0]` → 256 buckets → in-memory pdqsort per bucket →
 concat; no merge). Result: **1,772,541,586 entries, 106 G**.
 
-### 4. Migrate  [wip: running on mainnet]
+### 3.5 Re-sort the snapshot — the memory-bound migrate enabler  [done]
+
+`ethrex migrate` resolves each of ~2 B leaves against the 106 G preimage file by binary-search.
+The geth snapshot orders storage by `keccak(addr)+keccak(slot)`, so the `keccak(slot)` lookups
+hit the preimage file *randomly* — days of random reads on a box that can't cache it. **Re-sort
+the snapshot's storage entries by `keccak(slot)` first** ([`snapshot-resorter/`](../snapshot-resorter/))
+so the lookups become monotonic/sequential → migrate becomes memory-bound and runs in hours even
+on a small-RAM box. Output is provably identical (migrate writes a temp CF sorted by tree-key, so
+input order can't change the result).
+
+### 4. Migrate  [done]
 
 ```
-ethrex --network mainnet --datadir <bn-dd> migrate <preimages.rlp> <snapshot.rlp> --code <code.rlp> --at-block 25340000
+ethrex --network mainnet --datadir <bn-dd> migrate <preimages.rlp> <snapshot-sorted.rlp> --code <code.rlp> --at-block <N>
 ```
-Builds the binary-trie state DB at the snapshot block. Auto-tunes to **mmap mode** (preimages
-~116 G > RAM → binary-search the sorted file). **Success check: `skipped ≈ 0`** in the collect
-phase (nonzero = missing preimages — see `design-rationale.md`). On Hoodi with geth's partial
-preimages this was 10.27 M; with the complete Xatu set it should be ~0.
+Builds the binary-trie state DB from the **re-sorted** snapshot. Raise the FD limit
+(`LimitNOFILE=1048576`) — RocksDB opens many SSTs. Runs collect (resolve preimages → derive
+BLAKE3 tree keys → temp CF) then build (bulk-load the trie). **`skipped`** reports accounts/slots
+with no preimage; on mainnet this was ~1.78%, traced to state established by non-execution-diff
+sources (block rewards, beacon withdrawals, genesis, internal transfers) absent from Xatu's diff
+tables — see `design-rationale.md`. Note migrate only records the latest block *number* + the
+trie, not a head block or the flat code table → seed those next.
 
-### 5. Launch the binary-node  [todo]
+### 5. Seed the head + code, then launch  [done]
 
-Start the fork binary on `<bn-dd>` (p2p disabled). It holds mainnet state as of the snapshot
-block. Confirm it serves correct values for known accounts.
+`migrate` leaves the datadir unbootable (no head block) and code-incomplete (`ACCOUNT_CODES`
+empty), so seed both before launching:
+```
+ethrex --datadir <bn-dd> --network mainnet seed-head <head-block.json> --state-root <binary-root>
+ethrex --datadir <bn-dd> --network mainnet seed-code <code.rlp>
+```
+`seed-head` stores the **real** head block header (fetch it via `eth_getBlockByNumber(<N>,false)`
+→ JSON) as the canonical head and records the binary-trie checkpoint, so the node can establish a
+head; `seed-code` backfills `ACCOUNT_CODES` from the geth code export (needed by `eth_getCode`
+*and* block execution). Then launch the fork on `<bn-dd>` with `--p2p.disabled` + distinct ports;
+confirm it serves correct balance/nonce/code for known accounts.
 
-### 6. Run the shadow — feeder + equiv-daemon + dashboard  [todo: not yet built]
+### 6. Catch up to the tip, then run the shadow  [wip]
 
-Feeder pulls each new block from the reference node → binary-node executes it. equiv-daemon
-compares value-level state per block (BAL-driven), records discrepancies, exports Prometheus
-metrics → Grafana. See `architecture.md`.
+`ethrex --datadir <bn-dd> --network mainnet catch-up <local-node-rpc> [--to <block>]` pulls blocks
+from the reference node and executes each against the binary trie, advancing from the migrated
+checkpoint to the tip. This phase is **random-read-bound on the trie** → it needs the recommended
+NVMe + RAM (it's the reason for the hardware spec, not the bootstrap). Once at the tip, the
+feeder/equiv-daemon compares value-level state per block (BAL-driven), records discrepancies, and
+exports Prometheus → Grafana. See `architecture.md`.
 
 ### Lessons / gotchas (hard-won)
 

@@ -8,6 +8,33 @@ differ by design, so the check compares **values**, not roots.
 
 Built on a fork of ethrex's binary-trie work plus a memory-bound bulk-migration pipeline.
 
+### How to replicate and run your own binary-node
+
+**Recommended hardware:** 32 vCPU · 256 GB RAM · **~7 TB local NVMe SSD**. The NVMe is not
+optional — per-block binary-trie execution is random-read-latency-bound, so network-attached
+or HDD-class volumes won't keep up (rationale: [audit](docs/audit_1_24_06.md),
+[design](docs/design-rationale.md)). The RAM caches the trie working set; the disk absorbs the rest.
+
+**You need this repo + two external forks + a synced mainnet geth node:** this repo (tooling +
+docs + journal), the [**ethrex fork**](https://github.com/0xalizk/ethrex/tree/feat/migrate-seed-and-catchup)
+(the binary-trie node + `migrate` / `seed-head` / `seed-code` / `catch-up`), and
+[**patched geth**](https://github.com/edg-l/go-ethereum/tree/feat/export-code) (adds `db export code`).
+
+**Pipeline** — full commands in **[docs/replication.md](docs/replication.md)**; in brief:
+
+1. **Export** current mainnet state from a synced geth: `geth db export snapshot` + `db export code`.
+2. **Preimages** — download [Xatu `canonical_execution_*`](https://ethpandaops.io/data/) and extract
+   distinct addresses/slots ([`xatu-preimages/`](xatu-preimages/)), then keccak → `preimages.rlp`
+   ([`preimage-builder/`](preimage-builder/)).
+3. **Re-sort + migrate** — re-sort the snapshot by `keccak(slot)` ([`snapshot-resorter/`](snapshot-resorter/))
+   so `ethrex migrate`'s preimage lookups go sequential (memory-bound), then `ethrex migrate` builds the binary trie.
+4. **Seed** the datadir bootable + code-complete: `ethrex seed-head …` then `ethrex seed-code …`.
+5. **Catch up + shadow** — `ethrex catch-up <local-node-rpc>` executes forward to the tip, then run
+   the node (p2p off) with the equivalence feeder.
+
+**Shortcut (fast path):** already have a migrated datadir? Skip 1–4 — copy it over and start at
+**catch-up** (step 5).
+
 ### Status: mainnet binary trie built ✅
 
 The full mainnet state has been migrated into a binary trie on a commodity (61 GB RAM) box:
@@ -79,7 +106,9 @@ git-ignored — regenerate via the pipeline.
 
 ### External components (forks, not vendored — clone these yourself)
 
-- **ethrex** (binary-trie node + `migrate`): `lambdaclass/ethrex` with our patch at commit
-  `b0fe293` (`--at-block` flag + migration). To be pushed to a public fork / upstreamed.
+- **ethrex** (binary-trie node + `migrate` / `seed-head` / `seed-code` / `catch-up`):
+  [`0xalizk/ethrex`](https://github.com/0xalizk/ethrex/tree/feat/migrate-seed-and-catchup) branch
+  `feat/migrate-seed-and-catchup` (a fork of `lambdaclass/ethrex`'s `eip-7864-plan`). Build with
+  `cargo build --release`. (The `migrate` skipped-slots fix is also up as a PR to upstream.)
 - **patched geth** (adds `db export code`): `edg-l/go-ethereum` branch `feat/export-code`
   (geth v1.17.2 base).
