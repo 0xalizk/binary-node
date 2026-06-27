@@ -159,11 +159,25 @@ ethrex --datadir <mainnet-el-datadir> --network mainnet backfill-bodies
 (Three p2p handshake bugs fixed 2026-06-26; see `feat/migrate-seed-and-catchup` history.
 Stop the mainnet EL first for exclusive RocksDB lock; restart after backfill completes.)
 
+**Prerequisite — persisted node hashes (critical).** The binary trie is ID-addressed and stores
+each node's Merkle hash in the node itself. Computing the per-block state root only re-hashes the
+*changed* paths **iff** every node's hash is on disk; otherwise `merkelize` must re-walk and
+re-hash the entire trie (3.68 B nodes ≈ 20 h / 40 TB of cold reads) *every block*, and catch-up
+never completes. The migrate **build phase persists these hashes** (the bulk builder stores the
+hash it computes for free), so a freshly migrated datadir is ready for catch-up with no extra
+step. For a datadir migrated **before** that fix (commit `610e459d8`), run the one-time backfill:
+```
+ethrex --datadir <bn-dd> --network mainnet rehash
+```
+It walks the trie once and persists every node's hash (streaming, bounded memory, resumable —
+re-running skips already-hashed subtrees). On completion it prints the trie root; **verify it
+equals the root migrate reported** before trusting the trie. Then catch-up.
+
 Pulls each block from a reachable local mainnet node (`<local-node-rpc>`, e.g.
 `http://127.0.0.1:8545`) and re-executes it against the binary trie, advancing from the migrated
-checkpoint to the tip. **This phase is random-read-bound on the trie** → it's the reason for the
-NVMe + RAM spec, not the bootstrap. Keep the raised FD limit. Safe to interrupt and resume (it
-restarts from the trie checkpoint). Two notes:
+checkpoint to the tip. With persisted hashes this is **incremental** — each block touches only the
+accounts/slots it changed (thousands of node reads, not billions). Keep the raised FD limit. Safe
+to interrupt and resume (it restarts from the trie checkpoint). Two notes:
 - **Validate on a small range first:** `catch-up --to <checkpoint+10> <rpc>`, confirm the head
   advances and a balance/code spot-check matches, *before* the full backlog.
 - The tip is sampled once per run, so a long run finishes slightly behind — re-run until it
