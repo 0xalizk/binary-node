@@ -33,7 +33,7 @@ docs + journal), the [**ethrex fork**](https://github.com/0xalizk/ethrex/tree/fe
    run the node (`--p2p.disabled`). Raise the open-file limit (`ulimit -n 1048576`) for the
    seed / catch-up / run steps — RocksDB opens many SSTs.
 
-> ⚠️ **The live feeder + equivalence-daemon + Grafana are not built yet.** Today the pipeline
+> ⚠️ **The live feeder + equivalence-daemon are not built yet.** Today the pipeline
 > gets you a binary-trie node bootstrapped, caught up to the tip, and serving state; the per-block
 > binary↔MPT comparison loop is still to come.
 
